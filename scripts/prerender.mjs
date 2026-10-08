@@ -23,11 +23,7 @@ const staticRoutes = [
   ['/privacy/', 'Privacy Notice', 'Learn how project request data is used.']
 ]
 const stateRoutes = data.location_data.state_pages.map(s => [`/service-areas/${slugify(s.state)}/`, `${s.state} Mobile Commercial Kitchen Trailer Rentals`, `Plan temporary mobile kitchen, dishwashing, walk-in cooler, walk-in freezer, and refrigeration trailer rentals in ${s.state}.`])
-const cityRoutes = [...data.service_area_data]
-  .sort((a,b) => `${a.state}-${a.representative_city}`.localeCompare(`${b.state}-${b.representative_city}`))
-  .slice(0, 180)
-  .map(c => [`/service-areas/${slugify(c.state)}/${c.city_slug}/`, `${c.representative_city}, ${c.state} Mobile Commercial Kitchen Trailer Rentals`, `Plan mobile commercial kitchen and refrigeration trailer rentals in ${c.representative_city}, ${c.state}.`])
-const routes = [...staticRoutes, ...stateRoutes, ...cityRoutes]
+const routes = [...staticRoutes, ...stateRoutes]
 for (const [route, title, description] of routes) {
   const html = source
     .replace(/<title>.*?<\/title>/, `<title>${title} | Custom Kitchen Hoods</title>`)
