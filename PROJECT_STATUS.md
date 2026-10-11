@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-12 — Public phone replacement
+
+- Replaced the former public response number with owner-supplied `+18883855965`, displayed as `1-888-385-5965`, across global header, hero, footer, sticky and emergency CTAs, Contact and Privacy copy, `tel:` links, Organization schema and server-side lead-relay failure messages.
+- Active-source scan found zero remnants of the previous number. Typecheck, 6/6 focused tests, the 313-route production build and local Chromium checks passed; visible links resolve to `tel:+18883855965`.
+- Release state: ready to commit, push and verify in production.
+
 ## 2026-10-12 — Supplied shield logo and favicon
 
 - Replaced the header OF monogram with the owner-supplied transparent mountain/oil-rig/basecamp shield while retaining the Oil Field Base Camps text wordmark and accessible link name.

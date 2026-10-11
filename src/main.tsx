@@ -4,8 +4,8 @@ import { ArrowRight, BedDouble, Building2, Check, ChefHat, ChevronDown, Droplets
 import './styles.css'
 import LocationPages from './LocationPages'
 
-const PHONE = '1-800-205-6106'
-const PHONE_LINK = '+18002056106'
+const PHONE = '1-888-385-5965'
+const PHONE_LINK = '+18883855965'
 const ORIGIN = 'https://oil-field-base-camps.com'
 const inventory = [
   { slug: 'mobile-commercial-kitchens', name: 'Mobile Commercial Kitchens', eyebrow: 'Food production', icon: ChefHat, image: '/images/catalog/mobile-kitchen-trailers-960.webp', phrase: 'Mobile commercial kitchen trailer rentals', text: 'Portable cooking, preparation and service capacity for remote crews, planned shutdowns and emergency operations.' },

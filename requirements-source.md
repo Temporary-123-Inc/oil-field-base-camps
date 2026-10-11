@@ -12,7 +12,7 @@ Source: user request dated 2026-10-11.
 - Treat the supplied authority value as domain authority 4; do not represent it as Ahrefs DR.
 - Prioritize Remote Workforce Housing Basecamp trailer rentals, mancamps, remote workforce housing, and bunkbed rentals through four-tier phrases.
 
-Observed business facts recovered from indexed public pages: phone `1-800-205-6106`; remote-project support includes kitchens, dishwashing, refrigeration, showers, restrooms, laundry, accommodation, offices, utilities and related camp infrastructure. Availability, delivery timing, configurations and compliance remain confirmation-based.
+Owner-approved business phone: `+18883855965` (displayed as `1-888-385-5965`). Remote-project support includes kitchens, dishwashing, refrigeration, showers, restrooms, laundry, accommodation, offices, utilities and related camp infrastructure. Availability, delivery timing, configurations and compliance remain confirmation-based.
 
 Conflict resolution: DA 4 calls for a compact site. The user's explicit Super 9 requirement is implemented through the approved all-nine remote man camp combination profile, with nine focused inventory pages and no bulk city-page generation.
 

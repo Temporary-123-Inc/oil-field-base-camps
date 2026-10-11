@@ -1,5 +1,13 @@
 # Temporary123 Test Results
 
+## 2026-10-12 — Public phone replacement pre-release PASS
+
+- Owner-supplied phone is stored as display `1-888-385-5965` and E.164 `+18883855965`.
+- Active-source scan: zero instances of the former display, compact or E.164 number across runtime, API, requirements and tests.
+- `pnpm run typecheck`: pass. Focused Vitest (`oil-field-rebuild`, `location-data`): 6/6 pass.
+- `pnpm run build`: pass; 313 indexable routes prerendered.
+- Local Chromium confirmed the new display number and exact `tel:+18883855965` value in the alert bar, hero, emergency band, footer and sticky urgent action.
+
 ## 2026-10-12 — Supplied shield logo and favicon pre-release PASS
 
 - `pnpm run typecheck`: pass.
