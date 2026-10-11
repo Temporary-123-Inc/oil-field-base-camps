@@ -13,4 +13,4 @@
 
 - The attached authoritative site-38 JSON is integrated locally through `src/LocationPages.tsx` and `scripts/prerender.mjs`.
 - Current build output is 313 routes: 16 existing pages, one service-area hub, 50 state pages and 246 city pages.
-- Focused tests and responsive route QA pass. Commit, GitHub push and Vercel deployment remain pending for this revision; production Glide credentials are still unavailable.
+- Focused tests and responsive route QA pass. Implementation commit `da7df21` is on GitHub main and READY Vercel deployment `dpl_xMV1NQfaJg65Mf6i9tqLMWyEet8W` serves `https://oil-field-base-camps.vercel.app/`. Production Glide credentials are still unavailable.
