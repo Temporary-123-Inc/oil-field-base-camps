@@ -4,7 +4,7 @@
 
 - Replaced the former public response number with owner-supplied `+18883855965`, displayed as `1-888-385-5965`, across global header, hero, footer, sticky and emergency CTAs, Contact and Privacy copy, `tel:` links, Organization schema and server-side lead-relay failure messages.
 - Active-source scan found zero remnants of the previous number. Typecheck, 6/6 focused tests, the 313-route production build and local Chromium checks passed; visible links resolve to `tel:+18883855965`.
-- Release state: ready to commit, push and verify in production.
+- Release state: commit `db7a12d` pushed to organization `main`; production deployment `dpl_ENK8zbsnbNVL7FTdYG8uoHwrJ3Nh` reached READY. Live Chromium confirmed the new display number and exact `tel:+18883855965` links across the header, hero, emergency band, footer and sticky urgent action.
 
 ## 2026-10-12 — Supplied shield logo and favicon
 

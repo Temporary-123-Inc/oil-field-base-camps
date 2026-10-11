@@ -7,6 +7,7 @@
 - `pnpm run typecheck`: pass. Focused Vitest (`oil-field-rebuild`, `location-data`): 6/6 pass.
 - `pnpm run build`: pass; 313 indexable routes prerendered.
 - Local Chromium confirmed the new display number and exact `tel:+18883855965` value in the alert bar, hero, emergency band, footer and sticky urgent action.
+- Production commit `db7a12d` / deployment `dpl_ENK8zbsnbNVL7FTdYG8uoHwrJ3Nh`: READY. Live Chromium confirmed `1-888-385-5965` and `tel:+18883855965` in the alert bar, hero, emergency band, footer and sticky urgent action.
 
 ## 2026-10-12 — Supplied shield logo and favicon pre-release PASS
 
