@@ -142,14 +142,15 @@ function LocationHero({ variant, h1, description, availability, price, eta, dist
   const action = <LinkComponent className="button" href="/contact-us/">{cta} <ArrowRight/></LinkComponent>
   return <section className={`location-hero hero-variation-${variant}`}>
     {variant === 2 && <HeroMedia/>}
-    <div className="location-hero-copy"><span className="kicker">REMOTE WORKFORCE HOUSING</span><h1>{h1}</h1>{variant !== 3 && <p>{description}</p>}{variant === 3 && <span className="availability-pill">{availability}</span>}{variant !== 2 && action}{variant === 3 && <p>{description}</p>}</div>
+    <div className="location-hero-copy"><span className="kicker">REMOTE WORKFORCE HOUSING</span><h1>{h1}</h1>{action}{variant === 3 && <span className="availability-pill">{availability}</span>}</div>
     {variant === 1 && facts}
     {variant === 1 && <HeroMedia/>}
-    {variant === 2 && <div className="hero-compact-row">{facts}{action}</div>}
+    {variant === 2 && <div className="hero-compact-row">{facts}</div>}
     {variant === 3 && facts}
     {variant === 3 && <HeroMedia/>}
-    {variant === 4 && <aside className="hero-info-panel">{facts}{action}</aside>}
+    {variant === 4 && <aside className="hero-info-panel">{facts}</aside>}
     {variant === 4 && <HeroMedia/>}
+    <p className="location-hero-description">{description}</p>
   </section>
 }
 

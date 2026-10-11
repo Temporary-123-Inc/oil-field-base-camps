@@ -435,3 +435,9 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Recompose all hero variants to one column at 1100px and below; use shrink-safe fact/card grids and stacked mobile controls rather than truncating or hiding location content.
 - Preserve all dataset text in the document. Responsive fixes are presentational only and must not shorten, replace or defer the H1, description, pricing, ETA, availability or city-link content.
 
+## 2026-10-11 — Whole-site above-the-fold hierarchy
+
+- Treat the first viewport as a planning handoff: eyebrow, one readable H1, truthful supporting copy and the primary action must remain reachable without being covered by fixed controls.
+- On location routes, keep the complete authoritative description in the hero document flow, but place it in its own full-width row after the H1/CTA, facts and media composition so long source copy cannot stretch or bury the operational facts.
+- On short mobile viewports, delay the fixed quick-action bar until the user scrolls beyond the opening content. Preserve the 24/7 response phone in the top bar so urgency remains accessible without overlapping the primary CTA.
+

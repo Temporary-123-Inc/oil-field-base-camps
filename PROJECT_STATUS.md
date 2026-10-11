@@ -239,6 +239,14 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Removed horizontal overflow at the 320px boundary, including the state contact heading and lead form, without changing any authoritative location content or routes.
 - Typecheck, focused 5/5 tests, 313-route production build and representative browser matrices across desktop, tablet and mobile passed locally.
 - Release state: commit `1784cc5` pushed to organization `main`; production deployment `dpl_D1NgLPpVBQ1WxVdBNdeQtkv7WN6p` reached READY. Live variation 1–4 city checks and 320/390px state/city checks passed with one H1, visible CTA, decoded gallery assets and zero horizontal overflow.
+
+## 2026-10-11 — Whole-site above-the-fold and responsive audit
+
+- Audited the 313-route output and all shared page families at 1440, 1024, 768, 390 and 320px, including 320×568 and 390×667 short-screen checks.
+- Reduced oversized homepage/core H1s, pulled primary actions into the opening viewport, repaired Service Areas and Industries overflow, and switched the full desktop navigation before it becomes crowded.
+- Reorganized location heroes so H1, CTA, price/ETA facts and media compose before the complete authoritative description. The description remains visible, indexable and unchanged inside the hero.
+- Mobile sticky actions now enter after the opening content instead of obscuring the primary hero CTA; the urgent response line remains available in the top bar.
+- Typecheck, focused 5/5 tests, the 313-route production build, 85 core-route responsive checks and representative four-variant/content-extreme location checks pass locally. Release verification is pending.
 # 2026-10-11 — Oil Field Base Camps rebuild
 
 Built a compact 16-route Oil Field Base Camps website from the approved Temporary123 template on `codex/rebuild-oil-field-base-camps`. Added the responsive brand shell, Super 9 inventory menu/pages, homepage inventory grid, industries, process, calculator, about, contact and privacy pages; urgent 24/7 response CTAs; sticky quick-request form; server-side Glide relay; SEO metadata, robots and sitemap. Local checks passed: 2/2 focused tests, TypeScript, production build, 16-route prerender, desktop browser, 390×844 mobile browser with no overflow, and contact form rendering with no console errors. A mocked Glide request passed, but no live Glide row was created because production webhook credentials are not available. Production deployment and live verification were not performed.
