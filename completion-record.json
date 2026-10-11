@@ -4,7 +4,7 @@
   "status": "incomplete-staged",
   "implemented": true,
   "committed": true,
-  "pushed": false,
+  "pushed": true,
   "deployed": false,
   "live_verified": false,
   "checks": { "focused_tests": "PASS 2/2", "typecheck": "PASS", "build": "PASS; 16 routes", "desktop_browser": "PASS", "mobile_browser": "PASS; 390x844; no overflow", "contact_form": "PASS rendered; 9 controls; no console errors", "glide_contract": "PASS mocked upstream", "glide_live_submission": "BLOCKED missing production credentials" },
