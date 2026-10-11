@@ -441,3 +441,10 @@ A verified Git bundle protects the committed public-indexability source and prio
 - On location routes, keep the complete authoritative description in the hero document flow, but place it in its own full-width row after the H1/CTA, facts and media composition so long source copy cannot stretch or bury the operational facts.
 - On short mobile viewports, delay the fixed quick-action bar until the user scrolls beyond the opening content. Preserve the 24/7 response phone in the top bar so urgency remains accessible without overlapping the primary CTA.
 
+# 2026-10-12 — Contact-form Glide delivery boundary
+
+- All rendered contact forms share `LeadForm` and submit to the same-origin `/api/contact` relay. The rental calculator remains calculation-only and does not call the contact API.
+- The relay forwards only `url`, `name`, `email`, `phone`, `message`, `service`, `duration`, `industry`, `location`, `startDate`, and `consent` inside Glide's `data` object. Internal `source` and honeypot values are never forwarded.
+- Submitted URLs are reduced to their path and rebuilt on `https://oil-field-base-camps.com`; browser, preview, query-string, and user-supplied origins cannot become Glide lead URLs.
+- `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` are server-only production Vercel secrets. Neither belongs in tracked source, the client bundle, logs, or public configuration.
+

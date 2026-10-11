@@ -1,5 +1,13 @@
 # Temporary123 Test Results
 
+## 2026-10-12 — Contact forms to Glide pre-release PASS
+
+- Vercel production environment contains sensitive `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` entries; their values were not written to source or browser configuration.
+- Credential scan across tracked/runtime source and the completed build found zero occurrences of the supplied webhook identifiers or token.
+- Focused Vitest (`oil-field-rebuild`, `location-data`): 7/7 pass. The relay test proves exact requested payload keys, both authorization headers, canonical `https://oil-field-base-camps.com/contact-us/` URL, stripped internal fields, and calculator exclusion.
+- `pnpm run typecheck`: pass. `pnpm run build`: pass; 313 indexable routes prerendered.
+- Local Chromium Contact page exposes labeled and required service, duration, industry, location, start-date, consent and project-detail controls. No live submission was made before deployment because production-only secrets require a fresh Vercel deployment.
+
 ## 2026-10-12 — Public phone replacement pre-release PASS
 
 - Owner-supplied phone is stored as display `1-888-385-5965` and E.164 `+18883855965`.
