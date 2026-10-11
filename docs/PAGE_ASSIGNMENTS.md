@@ -1,6 +1,6 @@
 # Page and File Assignments
 
-## 2026-10-11 Oil Field Base Camps full rebuild — Complete locally; GitHub push pending
+## 2026-10-11 Oil Field Base Camps full rebuild — Complete locally; GitHub push blocked by missing terminal credentials
 
 Root task owns the destination-wide rebrand and rebuild on `codex/rebuild-oil-field-base-camps`: shared React shell, navigation, homepage, Super 9 inventory pages, calculator, contact/Glide webhook, SEO output, design system, tests, and target-specific rebuild evidence. The destination repository was empty; work is based on verified Temporary123 template commit `d8948d55241b6ed6dfdc7f1734d3ea4a680cedbc`. Existing template history is source material, not concurrent destination work.
 
