@@ -1,5 +1,14 @@
 # Temporary123 Test Results
 
+## 2026-10-12 — Supplied shield logo and favicon pre-release PASS
+
+- `pnpm run typecheck`: pass.
+- `pnpm run build`: pass; Vite production output and 313 indexable prerendered routes completed.
+- Focused Vitest (`oil-field-rebuild`, `location-data`): 6/6 pass, including header/logo/favicons/schema assets.
+- Generated output contains all favicon/touch-icon links and Organization logo schema; all five branded assets are present in `dist`.
+- Local Chromium desktop QA: shield decoded at 256×256 intrinsic pixels, rendered 54×54 inside the 86px header, retained the accessible `OIL FIELD BASE CAMPS` brand name, and introduced zero horizontal overflow. Visual inspection passed.
+- The broad inherited `pnpm test` command remains incompatible with this repository: unrelated Temporary123 suites fail collection because their dependencies are absent, and three legacy redirect assertions conflict with this site's Vercel configuration. This is unchanged from the site-38 release and not caused by the branding change.
+
 ## 2026-09-26 — Direct-answer guide pre-release
 
 34/34 engine/content tests passed. Full TypeScript/Vite/prerender build passed (745 pages + 404). Local built-site Playwright 4/4 passed at 375/1440px: phone text and tel link, weekend hours with dispatch caveat, pricing disclaimer, unknown question fallback, contact drawer, unchanged homepage brand/H1/canonical and zero page errors. Secret scan: 1161 files, no findings. No inquiry submitted; unchanged email/backend excluded.

@@ -166,6 +166,8 @@ Use: `Planned`, `Active`, `Blocked`, `Review needed`, or `Complete`.
 
 When work is complete, include the commit or deployment reference and point to the relevant entry in `docs/TEST_RESULTS.md`.
 
+| Global shield logo and favicon (`src/main.tsx`, `src/styles.css`, `index.html`, branded public image/favicon assets, verification and coordination docs) | Current task — supplied Oil Field Base Camps shield identity | Complete | 2026-10-12 | 2026-10-12 | Owner-supplied transparent shield replaces the OF monogram; 32px, 180px, 192px and 256px derivatives plus the source-resolution asset are wired into the header, favicon metadata and Organization schema. Typecheck, 313-route build, 6/6 focused tests, static output checks and desktop browser QA passed. |
+
 
 2026-09-17 Check H1 Descriptions: COMPLETE, local description-only audit, NO DEPLOY. Own work/qa/h1-description-only-20260917 and isolated .temp/h1-description-only-20260917. Latest user forbids ALL H1 edits. Reviewed prior assignments, sessions, git changes and both content coordination files. Narrow runtime scope: equipment-description branch of alignedPageIntro ONLY, not location copy, and exact non-location introduction overrides. Earlier all-page integration session ended. Preserve existing location/query repairs, all H1s, routes, metadata, images and unrelated changes. No root dist rebuild, commit, push or deployment.
 

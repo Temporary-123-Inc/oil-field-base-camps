@@ -1,5 +1,12 @@
 # Temporary123 Project Status
 
+## 2026-10-12 — Supplied shield logo and favicon
+
+- Replaced the header OF monogram with the owner-supplied transparent mountain/oil-rig/basecamp shield while retaining the Oil Field Base Camps text wordmark and accessible link name.
+- Added full-resolution and optimized header assets, 32px and 192px browser icons, a 180px Apple touch icon, explicit favicon metadata and the logo URL in Organization structured data.
+- Typecheck, the 313-route production build, 6/6 focused tests, representative generated-HTML/asset checks and local desktop browser QA passed. The inherited broad test command still reports the previously documented unrelated Temporary123 missing-dependency suites and three incompatible legacy redirect assumptions.
+- Release state: ready to commit, push and verify on the production Vercel URL.
+
 ## 2026-09-26 — Direct-answer guide release
 
 Prepared-answer guide now returns phone, hours, equipment options and project guidance directly. Reusable businessTopics profile keeps business facts separate from engine. Isolated release from 3518096; user authorized deployment. 34 engine tests, full build (745 pages + 404), 4 local browser tests and secret scan passed. Production verification pending.
