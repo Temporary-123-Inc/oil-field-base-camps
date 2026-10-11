@@ -796,4 +796,5 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Side-by-side desktop galleries no longer stretch to match long city descriptions. Tested variation-4 media is 408px high at 1440px, and galleries recompose to bounded 16:7 or 4:3 layouts at narrower breakpoints.
 - Scope boundary: no JSON, routing, content, pricing, ETA, breadcrumb, link, form behavior or lead-delivery code was changed.
 - Independent review: three grid-composition findings were resolved. Variants 1/3 fact grids now remain 275px high instead of stretching beyond 850px; variation 4 spans its full 1200px information row at desktop; variation 2/4 tablet fact rows and CTA stack to a single column at 1024px and 768px.
+- Production: commit `1784cc5` produced READY deployment `dpl_D1NgLPpVBQ1WxVdBNdeQtkv7WN6p`. Live 1440px checks covered city variations 1–4; live 320px Arkansas state and 390px Fort Smith checks confirmed responsive type, CTA visibility, decoded media and zero horizontal overflow. The initially deferred Lafayette lazy image decoded after its gallery entered the viewport.
 
