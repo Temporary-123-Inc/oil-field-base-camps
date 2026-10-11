@@ -770,3 +770,16 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 
 The first Vercel build reported `conflicting_file_path` because the inherited `api/contact.ts` and the new `api/contact.js` both compiled to `/api/contact`. Removed the obsolete inherited endpoint so the validated Glide relay is the single route implementation.
 
+# 2026-10-11 — Site-38 state/city integration
+
+- Authoritative source copied byte-for-byte from the supplied file to `public/data/site-38-remote-workforce-housing-basecamp.json`.
+- `npm run typecheck`: passed.
+- `npm run build`: passed; Vite built 1,896 modules and prerendered 313 indexable routes: 16 existing, one service-area hub, 50 state pages and 246 city pages.
+- Focused Vitest: 5/5 passed across `location-data.test.ts` and `oil-field-rebuild.test.ts`.
+- Integrity audit: 50/50 state records, 246/246 unique city routes, 313 sitemap URLs, zero missing generated city files, zero state-count mismatches, zero broken nearby-city targets and zero forbidden bracketed placeholders.
+- Browser QA: all four deterministic hero variants rendered with one visible H1, visible description, three inventory images and location facts. Desktop Texas state page displayed all seven assigned cities. Mobile 390×844 check confirmed the variation-4 H1 and CTA with no horizontal overflow after correction.
+- Static HTML verification confirmed location H1, description, breadcrumb, quote-based starting price, ETA, distance, hours and inventory family are emitted without requiring client interaction.
+- Full inherited `npm test` was attempted: 260 assertions passed and three unrelated legacy redirect tests failed because the current `vercel.json` has no inherited `redirects` array; 51 stale inherited suites could not import packages absent from this focused rebuild (`cheerio`, Firebase test/admin packages and `@playwright/test`). This is recorded as an existing repository test-harness boundary; the new focused suites pass.
+- No live form was submitted. Glide credentials remain unavailable in this checkout.
+- Independent read-only review initially flagged unused customer/use-case/emphasis fields and inferred state-summary labels. Follow-up now renders the JSON positioning, customer types, prioritized use cases and supporting topics; orders planning modules by `equipment_emphasis`; and replaces inferred state labels with the exact JSON pricing, deployment and availability wording. Typecheck, focused 5/5 tests, 313-route build and 390×844 Texas/Fort Smith browser rechecks passed after the correction, with zero horizontal overflow.
+

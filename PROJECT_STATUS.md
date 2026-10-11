@@ -223,6 +223,15 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Added physical `.json` API function routes so the global trailing-slash policy cannot redirect form POST requests.
 - Firebase Admin now accepts either a complete PEM private key or its full base64 encoding and rejects missing PEM boundaries with an actionable configuration error.
 - Automated verification passed 54/54 tests and a 745-page-plus-404 production build. Commit `d024a06` deployed from organization `main` as READY production deployment `dpl_sq1yeYPTj8zRwu6Sz7v7vQ1M11Zr`; the custom domain, both form pages, public configuration and non-redirecting contact function were verified live. Prior live acceptance on the same repair confirmed saved Contact Us and calculator quote inquiries and Resend provider acceptance; details and boundaries are recorded in `docs/TEST_RESULTS.md`.
+
+## 2026-10-11 — Authoritative site-38 state/city pages
+
+- Applied the owner-supplied site-38 remote-workforce-housing dataset without importing content from another site.
+- Added a service-area hub, 50 state guides and 246 city pages while preserving the existing 16 routes, navigation, calculator and Glide-ready lead forms.
+- Location pages use four stable hero arrangements and exact per-record H1, description, breadcrumb, availability, quote pricing, ETA, distance, hours, inventory, rental and nearby-area data. The file assigns zero articles and zero fixed prices or discounts; none were invented.
+- Production build prerendered 313 indexable routes. Typecheck, five focused tests, route/data/link integrity audits and representative responsive browser checks passed. No prohibited bracketed placeholders remain.
+- The inherited broad test command still includes stale Temporary123 suites with missing dependencies and three redirect assumptions incompatible with this repository's current Vercel configuration; details are in `docs/TEST_RESULTS.md`.
+- Release state: complete locally, not yet committed, pushed or deployed.
 # 2026-10-11 — Oil Field Base Camps rebuild
 
 Built a compact 16-route Oil Field Base Camps website from the approved Temporary123 template on `codex/rebuild-oil-field-base-camps`. Added the responsive brand shell, Super 9 inventory menu/pages, homepage inventory grid, industries, process, calculator, about, contact and privacy pages; urgent 24/7 response CTAs; sticky quick-request form; server-side Glide relay; SEO metadata, robots and sitemap. Local checks passed: 2/2 focused tests, TypeScript, production build, 16-route prerender, desktop browser, 390×844 mobile browser with no overflow, and contact form rendering with no console errors. A mocked Glide request passed, but no live Glide row was created because production webhook credentials are not available. Production deployment and live verification were not performed.

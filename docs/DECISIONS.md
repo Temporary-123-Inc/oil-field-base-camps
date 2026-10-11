@@ -421,3 +421,11 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Send browser forms only to `/api/contact`; the server injects Glide credentials and forwards the validated payload. No Glide token is exposed to client code.
 - Use a local typographic OF mark because Cloudflare blocks direct retrieval of the supplied logo asset in automated and local browser checks. Retain the requested red/navy logo-derived palette.
 
+# 2026-10-11 — Site-38 location dataset and rollout override
+
+- The attached `site-38-remote-workforce-housing-basecamp.json` is the sole content authority for the new state/city experience. Existing global navigation, Super 9 pages, calculator and form behavior remain intact.
+- The explicit owner request for every state and city supersedes the earlier DA-4 compact-site cap for these 296 location pages. The build now publishes 313 total routes.
+- City routes follow the dataset canonical pattern `/{state-slug}/{page_layout_data.slug}/`; state guides live at `/service-areas/{state-slug}/` and link to every matching city.
+- Null price values render as `Project-specific quote`; no fixed price, automatic city discount, article, equipment specification or policy is inferred. The attached file has no kitchen-family pricing and no assigned incident articles.
+- Full city data remains in a route-loaded public JSON resource rather than the primary JavaScript bundle. The prerender step emits the exact H1, description and key location facts as static HTML for each route.
+

@@ -8,3 +8,9 @@
 - Completed: brand system, responsive shell, Super 9 inventory, core pages, calculator, sticky request form, contact form, Glide server relay, metadata, sitemap, robots, unit test, typecheck, production build, desktop/mobile browser checks.
 - Blockers: no Glide production credentials; Cloudflare blocks complete source crawl and original-logo asset retrieval; no production deployment authorization or independent release review.
 - Next: configure the two Glide environment variables, then deploy and complete live verification when authorized.
+
+## Location expansion — 2026-10-11
+
+- The attached authoritative site-38 JSON is integrated locally through `src/LocationPages.tsx` and `scripts/prerender.mjs`.
+- Current build output is 313 routes: 16 existing pages, one service-area hub, 50 state pages and 246 city pages.
+- Focused tests and responsive route QA pass. Commit, GitHub push and Vercel deployment remain pending for this revision; production Glide credentials are still unavailable.
