@@ -5,7 +5,7 @@
 - Updated the shared Contact, location-page and sticky quick-request form to collect and relay the owner-approved Glide fields. The calculator remains calculation-only and does not submit to `/api/contact`.
 - Hardened the server relay to validate a strict allowlist, strip internal/honeypot fields, canonicalize every lead URL onto `https://oil-field-base-camps.com`, forward the exact `data` object, and bound Glide calls to eight seconds.
 - Added the supplied Glide webhook and token as production-only sensitive Vercel variables; repository and built-output credential scans found zero values.
-- Typecheck, 7/7 focused tests, the 313-route production build and local Contact form browser QA passed. Release and one authorized live Glide test submission remain pending.
+- Typecheck, 7/7 focused tests, the 313-route production build and local Contact form browser QA passed. Commit `8d15827` is live through READY deployment `dpl_6M6Ac1DVHtdBWHmY6ay7EUy6LEqp`. Live Contact and calculator browser checks passed. One labeled production test lead returned HTTP 200 `{ok:true}` from the Glide-backed endpoint; Glide does not expose the created row for independent row-level confirmation through this integration.
 
 
 ## 2026-10-12 — Public phone replacement

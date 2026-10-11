@@ -7,6 +7,7 @@
 - Focused Vitest (`oil-field-rebuild`, `location-data`): 7/7 pass. The relay test proves exact requested payload keys, both authorization headers, canonical `https://oil-field-base-camps.com/contact-us/` URL, stripped internal fields, and calculator exclusion.
 - `pnpm run typecheck`: pass. `pnpm run build`: pass; 313 indexable routes prerendered.
 - Local Chromium Contact page exposes labeled and required service, duration, industry, location, start-date, consent and project-detail controls. No live submission was made before deployment because production-only secrets require a fresh Vercel deployment.
+- Production commit `8d15827` / deployment `dpl_6M6Ac1DVHtdBWHmY6ay7EUy6LEqp`: READY. Live Chromium confirmed all requested Contact controls and a calculation-only calculator with no submission form. Exactly one labeled test lead was POSTed through `https://oil-field-base-camps.vercel.app/api/contact`; the server returned HTTP 200 `{ok:true}`, proving Glide accepted the webhook request. Test identity was `Codex Glide Integration Test` / `glide-test@example.com`, and its message requests removal after verification. The webhook response does not provide row data, so row-level persistence was not independently inspected.
 
 ## 2026-10-12 — Public phone replacement pre-release PASS
 
