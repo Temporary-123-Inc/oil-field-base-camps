@@ -413,3 +413,11 @@ The supplied restroom-only interior set may appear on the registered 12 ft, 14 f
 # 2026-09-22 public indexability release boundary
 
 A verified Git bundle protects the committed public-indexability source and prior production baseline but does not include Firebase data or secrets. The SEO-only release may proceed from the isolated, tested commit because it does not alter inquiry persistence, authentication, authorization, rate limiting or recovery behavior. Indexability may be reported only after live-route, robots, canonical and sitemap verification; it must not be described as guaranteed Google indexing or ranking.
+# 2026-10-11 — Oil Field Base Camps rebuild decisions
+
+- Use the approved `remote-man-camp-complete-facilities` profile because the owner explicitly requested all Super 9 families and the existing indexed content evidences the facility breadth.
+- Keep the DA 4 site compact at 16 indexable routes; do not generate city/state pages without a complete URL and authority evidence package.
+- Treat 24/7 as response-line availability only. Do not promise inventory, dispatch, delivery or arrival.
+- Send browser forms only to `/api/contact`; the server injects Glide credentials and forwards the validated payload. No Glide token is exposed to client code.
+- Use a local typographic OF mark because Cloudflare blocks direct retrieval of the supplied logo asset in automated and local browser checks. Retain the requested red/navy logo-derived palette.
+

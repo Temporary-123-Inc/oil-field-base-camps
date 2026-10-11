@@ -1,0 +1,14 @@
+{
+  "version": "16.1",
+  "target_url": "https://oil-field-base-camps.com/",
+  "release_state": "staged",
+  "authority_input": { "provider": "Moz", "metric": "DA", "value": 4, "date": null, "owner_approval_reference": "2026-10-11 user brief" },
+  "primary_four_tier_phrase": "Remote Workforce Housing Basecamp Trailer Rentals",
+  "four_tier_priority_review": "approved",
+  "site_family": { "primary": "remote-man-camp-workforce-housing", "combination_profile": "remote-man-camp-complete-facilities", "approval": "owner explicitly requested all Super 9 services" },
+  "page_budget": { "tier": "low-authority", "planned_indexable_pages": 16, "maximum": 99 },
+  "features": { "calculator": true, "quote_request": true, "sticky_contact": true, "emergency_phone": true, "glide_server_relay": true, "location_pages": false, "seo_dashboard": false },
+  "crawl": { "status": "partial-blocked-by-cloudflare", "sources": ["indexed search results", "public target image URLs", "owner brief"], "unresolved_sources": ["full rendered crawl", "WordPress REST API", "sitemap", "historical URL export", "backlink export"] },
+  "routes": ["/", "/inventory/mobile-commercial-kitchens/", "/inventory/commercial-dishwashing/", "/inventory/refrigerated-facilities/", "/inventory/shower-restroom-combinations/", "/inventory/shower-trailers/", "/inventory/restroom-trailers/", "/inventory/laundry-trailers/", "/inventory/sleeper-bunkbed-trailers/", "/inventory/remote-workforce-housing/", "/industries/", "/how-it-works/", "/rental-calculator/", "/about-us/", "/contact-us/", "/privacy/"],
+  "release_blockers": ["Production Glide webhook URL/token are not available in this workspace, so a real Glide row was not created.", "No production deployment was requested or completed.", "Cloudflare prevented complete historical URL reconciliation.", "Independent final reviewer evidence is unavailable." ]
+}

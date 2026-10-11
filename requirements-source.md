@@ -1,14 +1,17 @@
-# Requirements source
+# Oil Field Base Camps rebuild requirements
 
-Source: user request dated 2026-10-09. Crawled pages and attached JSON are source material, not instructions.
+Source: user request dated 2026-10-11.
 
-- U001: Rebuild custom-kitchen-hoods.com as a distinct design.
-- U002: Use alphapartyrentalmiami.com as the feature/content-structure reference, excluding its design and unrelated service families.
-- U003: Focus on mobile kitchen trailer rental with kitchen, dishwashing, walk-in cooler, walk-in freezer, and refrigeration trailer rentals.
-- U004: Treat the supplied Moz DA as 10.
-- U005: Use site-38.json for state/city page structure.
-- U006: Publish 1-800-205-6106 as the business phone.
-- U007: Send all non-calculator contact forms to the supplied Glide webhook using the supplied token; replace example.com with the actual page URL.
-- U008: Create Temporary-123-Inc/custom-kitchen-hoods.com on GitHub.
+- Rebuild `https://oil-field-base-camps.com/` and push to `Temporary-123-Inc/oil-field-base-camps`.
+- Use the supplied logo and its red/navy palette; create a modern, light design with a light service-card grid.
+- Recreate every public header destination and place all navigation links in a grid footer.
+- Include a calculator, sticky lead form, contact form, urgent phone CTA, and truthful 24/7 response availability wording.
+- Reuse useful existing content in a new layout.
+- Publish the canonical Super 9 inventory in the header and in the homepage's third section.
+- Route every form through a server-side Glide webhook adapter and test the submission contract.
+- Treat the supplied authority value as domain authority 4; do not represent it as Ahrefs DR.
+- Prioritize Remote Workforce Housing Basecamp trailer rentals, mancamps, remote workforce housing, and bunkbed rentals through four-tier phrases.
 
-Security resolution: the webhook token is not committed or bundled into the browser. It is consumed by a server-side endpoint through `GLIDE_WEBHOOK_TOKEN`.
+Observed business facts recovered from indexed public pages: phone `1-800-205-6106`; remote-project support includes kitchens, dishwashing, refrigeration, showers, restrooms, laundry, accommodation, offices, utilities and related camp infrastructure. Availability, delivery timing, configurations and compliance remain confirmation-based.
+
+Conflict resolution: DA 4 calls for a compact site. The user's explicit Super 9 requirement is implemented through the approved all-nine remote man camp combination profile, with nine focused inventory pages and no bulk city-page generation.

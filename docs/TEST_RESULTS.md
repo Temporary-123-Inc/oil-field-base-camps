@@ -754,3 +754,15 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Live verification: 6/6 browser/HTTP tests passed against `https://temporary123.com`, including direct HTTP 200 and indexability checks for all 744 public routes. Homepage, contact, calculator, Command Center, Houston legacy and Western Kansas samples returned HTTP 200 with `index,follow` and exact self-canonicals. The sitemap contains 744 URLs and includes the Houston and Command Center routes. `/seo-dashboard/` remains HTTP 200 with `noindex,follow` and no sitemap entry; a synthetic missing URL returned HTTP 404 with `noindex,nofollow`. `www` redirects once with HTTP 308 to the exact apex path.
 - Boundary: no inquiry was submitted and no Google indexing request was sent. This proves technical crawl/index eligibility, not Google index inclusion or ranking.
 - Final Git deployment: evidence commit `cae81f1` produced READY production deployment `dpl_6tR8a6kQFDZra2k7abE9GBrrBkxU`, which replaced the manual build on the apex and `www` aliases without changing runtime code. A fresh all-route live test passed 744/744 direct public HTTP 200 checks; representative exclusions and the 744-URL sitemap were rechecked afterward.
+# 2026-10-11 — Oil Field Base Camps rebuild
+
+- `vitest run tests/oil-field-rebuild.test.ts`: PASS, 2/2. Confirms all nine inventory families and the authenticated server-side Glide payload contract.
+- `tsc -b`: PASS.
+- Vite production build: PASS, 1,895 modules; final JS 254.06 kB (79.24 kB gzip), CSS 15.87 kB (4.01 kB gzip).
+- Prerender: PASS, 16 indexable routes; sitemap contains 16 URLs; robots references the production sitemap.
+- Browser: PASS on desktop homepage; single H1, Super 9 grid, footer navigation, calculator and sticky actions present.
+- Browser: PASS at 390×844; no horizontal overflow; responsive header and hero render correctly.
+- Contact page: PASS; one form, nine controls, no broken loaded image, no browser console warnings/errors, no overflow.
+- Glide: mocked upstream submission PASS. Live submission BLOCKED because `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` are not configured in this checkout.
+- Live production: NOT TESTED; no deployment performed.
+

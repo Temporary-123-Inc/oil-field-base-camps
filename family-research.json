@@ -1,0 +1,21 @@
+{
+  "version": "16.1",
+  "target": "https://oil-field-base-camps.com/",
+  "review_date": "2026-10-11",
+  "authority": { "provider": "Moz", "metric": "DA", "value": 4, "source": "owner-supplied; date not supplied" },
+  "combination_profile": "remote-man-camp-complete-facilities",
+  "primary_family": "remote-man-camp-workforce-housing",
+  "families": [
+    { "id": "mobile-commercial-kitchen", "status": "approved", "evidence": "Indexed target page content lists containerized and mobile kitchen trailers." },
+    { "id": "commercial-dishwashing", "status": "approved", "evidence": "Indexed target page content lists containerized dishwashing trailers." },
+    { "id": "refrigerated", "status": "approved", "evidence": "Existing target content describes cold-storage support within basecamp services." },
+    { "id": "shower-restroom-combination", "status": "approved", "evidence": "Indexed target pages offer shower/restroom combination modular facilities." },
+    { "id": "shower", "status": "approved", "evidence": "Indexed target content lists containerized shower trailers." },
+    { "id": "restroom-bathroom", "status": "approved", "evidence": "Indexed target content lists containerized restroom trailers." },
+    { "id": "laundry", "status": "approved", "evidence": "Indexed target content lists containerized laundry trailers." },
+    { "id": "sleeper-bunkbed", "status": "approved", "evidence": "Indexed target content lists accommodation containers; owner explicitly requested Bunkbed coverage." },
+    { "id": "remote-man-camp-workforce-housing", "status": "approved-primary", "evidence": "Domain, indexed target content and owner brief establish remote basecamp and workforce-housing coordination." }
+  ],
+  "claim_limits": ["No guaranteed inventory, dispatch, arrival or delivery time.", "24/7 describes response-line availability only.", "Final features, compliance, equipment and pricing require confirmation."],
+  "unresolved": ["Owner did not supply a dated Moz report, historical URL export, Search Console, Analytics or backlink export.", "Cloudflare blocked a complete live crawl and direct logo download."]
+}

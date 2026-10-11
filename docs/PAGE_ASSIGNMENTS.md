@@ -1,5 +1,9 @@
 # Page and File Assignments
 
+## 2026-10-11 Oil Field Base Camps full rebuild — Complete locally; GitHub push pending
+
+Root task owns the destination-wide rebrand and rebuild on `codex/rebuild-oil-field-base-camps`: shared React shell, navigation, homepage, Super 9 inventory pages, calculator, contact/Glide webhook, SEO output, design system, tests, and target-specific rebuild evidence. The destination repository was empty; work is based on verified Temporary123 template commit `d8948d55241b6ed6dfdc7f1734d3ea4a680cedbc`. Existing template history is source material, not concurrent destination work.
+
 ## 2026-09-26 direct-answer guide release — Active
 
 Current task owns guide package/config and focused release tests in this isolated checkout based on origin/main 3518096. User authorized production deployment. Preserve existing audit/docs changes and all shared-checkout unrelated work.
