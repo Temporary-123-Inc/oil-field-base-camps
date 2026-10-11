@@ -8,6 +8,7 @@
 - Generated output contains all favicon/touch-icon links and Organization logo schema; all five branded assets are present in `dist`.
 - Local Chromium desktop QA: shield decoded at 256×256 intrinsic pixels, rendered 54×54 inside the 86px header, retained the accessible `OIL FIELD BASE CAMPS` brand name, and introduced zero horizontal overflow. Visual inspection passed.
 - The broad inherited `pnpm test` command remains incompatible with this repository: unrelated Temporary123 suites fail collection because their dependencies are absent, and three legacy redirect assertions conflict with this site's Vercel configuration. This is unchanged from the site-38 release and not caused by the branding change.
+- Production commit `c90b7e7` / deployment `dpl_9dQ7XRj1kmVdC6jW38TT3avCRNwo`: READY. Live Chromium confirmed the decoded 256px shield, 54px desktop presentation, intact accessible brand name, explicit 32px favicon link and zero horizontal overflow. Live HEAD checks returned HTTP 200 `image/png` for the 32px favicon, 192px favicon, Apple touch icon and 256px header logo.
 
 ## 2026-09-26 — Direct-answer guide pre-release
 

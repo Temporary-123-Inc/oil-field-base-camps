@@ -5,7 +5,7 @@
 - Replaced the header OF monogram with the owner-supplied transparent mountain/oil-rig/basecamp shield while retaining the Oil Field Base Camps text wordmark and accessible link name.
 - Added full-resolution and optimized header assets, 32px and 192px browser icons, a 180px Apple touch icon, explicit favicon metadata and the logo URL in Organization structured data.
 - Typecheck, the 313-route production build, 6/6 focused tests, representative generated-HTML/asset checks and local desktop browser QA passed. The inherited broad test command still reports the previously documented unrelated Temporary123 missing-dependency suites and three incompatible legacy redirect assumptions.
-- Release state: ready to commit, push and verify on the production Vercel URL.
+- Release state: commit `c90b7e7` pushed to organization `main`; production deployment `dpl_9dQ7XRj1kmVdC6jW38TT3avCRNwo` reached READY. The live header logo decoded at 256×256, rendered at 54×54 with zero overflow, and all four optimized live asset URLs returned HTTP 200 as PNG.
 
 ## 2026-09-26 — Direct-answer guide release
 
