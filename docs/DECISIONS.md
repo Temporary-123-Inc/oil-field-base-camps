@@ -429,3 +429,9 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Null price values render as `Project-specific quote`; no fixed price, automatic city discount, article, equipment specification or policy is inferred. The attached file has no kitchen-family pricing and no assigned incident articles.
 - Full city data remains in a route-loaded public JSON resource rather than the primary JavaScript bundle. The prerender step emits the exact H1, description and key location facts as static HTML for each route.
 
+## 2026-10-11 — Service-area responsive composition
+
+- Keep the four deterministic hero arrangements, but bound the type and media independently so long authoritative descriptions cannot stretch an adjacent gallery or force oversized headings.
+- Recompose all hero variants to one column at 1100px and below; use shrink-safe fact/card grids and stacked mobile controls rather than truncating or hiding location content.
+- Preserve all dataset text in the document. Responsive fixes are presentational only and must not shorten, replace or defer the H1, description, pricing, ETA, availability or city-link content.
+

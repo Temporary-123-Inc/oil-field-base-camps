@@ -785,3 +785,15 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Git/release: implementation commit `da7df21` was pushed to `Temporary-123-Inc/oil-field-base-camps` main. Git-triggered Vercel deployment `dpl_xMV1NQfaJg65Mf6i9tqLMWyEet8W` reached READY and assigned `oil-field-base-camps.vercel.app`.
 - Live preview verification: `/arkansas/fort-smith-arkansas/` returned the exact city title/H1, variation 4, visible description, three images, production-domain canonical and zero browser errors. No form was submitted.
 
+## 2026-10-11 — Service-area responsive layout repair
+
+- TypeScript: passed with `tsc -b`.
+- Focused Vitest: 5/5 passed across `location-data.test.ts` and `oil-field-rebuild.test.ts`.
+- Production build: passed; 1,896 modules built and 313 indexable routes prerendered.
+- Browser matrix: all four deterministic city hero variants passed at 1440, 1024, 768, 390 and 320 CSS pixels with one H1, a visible CTA, three decoded images and no horizontal overflow.
+- State-page matrix: representative variation 1–4 state pages passed at 1440, 768, 390 and 320 CSS pixels; city card links remained visible and usable. A 320-pixel contact-heading overflow found during QA was corrected and rechecked at zero overflow.
+- Desktop H1 scale now resolves to 44.64px at 1440px for the tested long titles; tablet resolves to 38.4px at 768px; mobile resolves to 35.1px at 390px and 31.2px at 320px.
+- Side-by-side desktop galleries no longer stretch to match long city descriptions. Tested variation-4 media is 408px high at 1440px, and galleries recompose to bounded 16:7 or 4:3 layouts at narrower breakpoints.
+- Scope boundary: no JSON, routing, content, pricing, ETA, breadcrumb, link, form behavior or lead-delivery code was changed.
+- Independent review: three grid-composition findings were resolved. Variants 1/3 fact grids now remain 275px high instead of stretching beyond 850px; variation 4 spans its full 1200px information row at desktop; variation 2/4 tablet fact rows and CTA stack to a single column at 1024px and 768px.
+

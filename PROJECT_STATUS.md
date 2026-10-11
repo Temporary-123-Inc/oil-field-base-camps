@@ -232,6 +232,12 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Production build prerendered 313 indexable routes. Typecheck, five focused tests, route/data/link integrity audits and representative responsive browser checks passed. No prohibited bracketed placeholders remain.
 - The inherited broad test command still includes stale Temporary123 suites with missing dependencies and three redirect assumptions incompatible with this repository's current Vercel configuration; details are in `docs/TEST_RESULTS.md`.
 - Release state: implementation commit `da7df21` pushed to organization `main`; READY Vercel deployment `dpl_xMV1NQfaJg65Mf6i9tqLMWyEet8W` assigned `oil-field-base-camps.vercel.app`. Representative live variation-4 city route passed title, H1, description, image, canonical and console checks.
+
+## 2026-10-11 — Service-area responsive layout repair
+
+- Normalized all four state/city hero arrangements with a smaller fluid H1 scale, bounded gallery proportions, shrink-safe fact cards and responsive single-column recomposition.
+- Removed horizontal overflow at the 320px boundary, including the state contact heading and lead form, without changing any authoritative location content or routes.
+- Typecheck, focused 5/5 tests, 313-route production build and representative browser matrices across desktop, tablet and mobile passed locally.
 # 2026-10-11 — Oil Field Base Camps rebuild
 
 Built a compact 16-route Oil Field Base Camps website from the approved Temporary123 template on `codex/rebuild-oil-field-base-camps`. Added the responsive brand shell, Super 9 inventory menu/pages, homepage inventory grid, industries, process, calculator, about, contact and privacy pages; urgent 24/7 response CTAs; sticky quick-request form; server-side Glide relay; SEO metadata, robots and sitemap. Local checks passed: 2/2 focused tests, TypeScript, production build, 16-route prerender, desktop browser, 390×844 mobile browser with no overflow, and contact form rendering with no console errors. A mocked Glide request passed, but no live Glide row was created because production webhook credentials are not available. Production deployment and live verification were not performed.
