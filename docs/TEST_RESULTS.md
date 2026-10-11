@@ -766,3 +766,7 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 - Glide: mocked upstream submission PASS. Live submission BLOCKED because `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` are not configured in this checkout.
 - Live production: NOT TESTED; no deployment performed.
 
+## Preview deployment repair
+
+The first Vercel build reported `conflicting_file_path` because the inherited `api/contact.ts` and the new `api/contact.js` both compiled to `/api/contact`. Removed the obsolete inherited endpoint so the validated Glide relay is the single route implementation.
+
