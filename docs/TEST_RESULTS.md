@@ -859,5 +859,8 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - `node node_modules/vite/bin/vite.js build` plus `node scripts/prerender.mjs`: passed; 313 indexable routes prerendered.
 - Rendered-output audit: 313/313 `dist/**/index.html` files contain exactly one `LocalBusiness` with the supplied name, phone, street address, logo and image; zero mismatches.
 - Negative assertions passed: no standalone duplicate `Organization`, `AggregateRating`, `priceRange`, or `openingHours` in the active JSON-LD source or rendered HTML.
-- Production deployment and live raw-HTML verification remain pending at this checkpoint. Structured data supports entity clarity and eligibility but does not guarantee rankings or rich results.
+- Commit `b3d1155` reached READY production deployment `dpl_Nxwzm3j7WQetZF2PSoi6jNk3YurD` and owns `oil-field-base-camps.vercel.app`.
+- Live raw-HTML checks passed on `/`, `/inventory/remote-workforce-housing/`, `/service-areas/texas/`, `/texas/austin-texas/`, and `/contact-us/`: all five returned HTTP 200, exactly one `LocalBusiness`, the exact name and phone, and their expected canonical URL.
+- The exact owner-supplied canonical-host image URLs returned HTTP 403 to the automated GET client. Their matching source files exist and deploy on the Vercel project, but crawlability through `oil-field-base-camps.com` could not be confirmed from this environment. The requested schema URLs were not substituted.
+- Structured data supports entity clarity and eligibility but does not guarantee rankings, indexing, or rich results. No Search Console recrawl or GMB change was submitted.
 

@@ -1,10 +1,12 @@
 # Temporary123 Project Status
 
-## 2026-10-13 — Sitewide GMB LocalBusiness schema (release pending)
+## 2026-10-13 — Sitewide GMB LocalBusiness schema (live verified)
 
 - Replaced the former standalone Organization JSON-LD object with one stable `LocalBusiness` entity matching the owner-supplied GMB name, phone, logo, image and Jacksonville postal address. `Oil Field Base Camps` remains the alternate name.
 - The same entity is emitted in the raw HTML of all 313 indexable routes. No ratings, review counts, price range, opening hours, coordinates, certifications or additional locations were inferred.
-- TypeScript, 7/7 focused tests, `git diff --check`, the 313-route production build, and a 313/313 rendered-schema audit passed. Page content, canonicals, metadata, sitemap membership and routes are unchanged; deployment and live validation remain pending.
+- TypeScript, 7/7 focused tests, `git diff --check`, the 313-route production build, and a 313/313 rendered-schema audit passed. Commit `b3d1155` is live through READY deployment `dpl_Nxwzm3j7WQetZF2PSoi6jNk3YurD`.
+- Live raw-HTML checks passed on the homepage, inventory, Texas state, Austin city and Contact templates: each returns HTTP 200 with exactly one matching LocalBusiness entity. Page content, canonicals, metadata, sitemap membership and routes are unchanged.
+- Boundary: the exact canonical-domain logo and image URLs supplied by the owner returned HTTP 403 to the automated production client, despite the corresponding files existing in the deployed project. The requested URLs were preserved; public crawler accessibility at that canonical host remains externally unverified.
 
 ## 2026-10-13 — Texas local rental team section (live verified)
 
