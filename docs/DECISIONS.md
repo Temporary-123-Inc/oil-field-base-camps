@@ -448,3 +448,10 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Submitted URLs are reduced to their path and rebuilt on `https://oil-field-base-camps.com`; browser, preview, query-string, and user-supplied origins cannot become Glide lead URLs.
 - `GLIDE_WEBHOOK_URL` and `GLIDE_WEBHOOK_TOKEN` are server-only production Vercel secrets. Neither belongs in tracked source, the client bundle, logs, or public configuration.
 
+## 2026-10-13 — Scope the Jacksonville office to Texas location pages
+
+- Show the user-supplied Jacksonville office module on `/service-areas/texas/` and every `/texas/{city}/` record, not on the national hub or non-Texas pages.
+- Keep the supplied business name, postal address, phone, Google Maps URL and Google review URL exact. Use an address-based Google embed only for the visual map; it does not replace either owner-supplied action link.
+- Lazy-load the map and add a narrow `frame-src` allowance for `www.google.com` and `maps.google.com`. Retain all other CSP, frame-ancestor and form-action restrictions.
+- Treat the section as contact/location information, not a claim that every Texas city has a separate office.
+

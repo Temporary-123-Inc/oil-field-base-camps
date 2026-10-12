@@ -837,3 +837,13 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Independent read-only review identified and then rechecked mobile first-viewport CTA collisions, long-description location-grid distortion, buried facts/media and hidden sticky-control focusability. All findings were corrected; final review reported no remaining actionable findings.
 - Production: commit `c94b7b2` produced READY deployment `dpl_BmD9UexDQM4BNHX5rk1ZbxRfRT79`. Live checks on the canonical Vercel URL covered homepage desktop/320×568, remote-workforce inventory 320×568, Service Areas 320×568, Lafayette variation 1 desktop, and Fort Smith variation 4 desktop/320×568. Every sample had one H1, zero horizontal overflow, zero broken loaded images and an unobscured CTA; mobile sticky controls were correctly hidden on initial load.
 
+## 2026-10-13 — Texas local rental team section
+
+- Scope: Texas state guide and the seven Texas city pages only.
+- `node node_modules/typescript/bin/tsc -b`: passed.
+- `node node_modules/vitest/vitest.mjs run tests/texas-office.test.ts tests/location-data.test.ts`: 2 files, 6 tests passed.
+- `node node_modules/vite/bin/vite.js build` plus `node scripts/prerender.mjs`: passed; 313 indexable routes prerendered (50 states, 246 cities).
+- Exact source verification passed for the supplied name, Jacksonville address, `tel:+18883855965`, Maps URL, review place identifier, Texas-only state/city gates and Google Maps CSP allowance.
+- Placeholder scan passed for the forbidden policy/delivery/service placeholders. `git diff --check` passed (line-ending notices only).
+- The in-app browser refused localhost attachment under its URL safety policy. No bypass was attempted; HTTPS production visual QA remains pending at this checkpoint.
+

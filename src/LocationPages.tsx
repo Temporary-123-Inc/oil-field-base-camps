@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type ComponentType, type ReactNode } from 'react'
-import { ArrowRight, BedDouble, Check, Clock3, MapPin, ShieldCheck, Truck, Users } from 'lucide-react'
+import { ArrowRight, BedDouble, Check, Clock3, ExternalLink, MapPin, Phone, ShieldCheck, Truck, Users } from 'lucide-react'
 
 type LinkProps = { href: string; children: ReactNode; className?: string }
 type LocationProps = {
@@ -78,6 +78,15 @@ type SiteData = {
 
 const DATA_URL = '/data/site-38-remote-workforce-housing-basecamp.json'
 const ORIGIN = 'https://oil-field-base-camps.com'
+const TEXAS_OFFICE = {
+  name: 'Oil Field Base Camp Rentals USA',
+  addressLines: ['1016 W Rusk St Unit 5', 'Jacksonville, TX 75766', 'United States'],
+  phoneDisplay: '1-888-385-5965',
+  phoneE164: '+18883855965',
+  mapsUrl: 'https://maps.app.goo.gl/MrEAT6YpegM3YnGZ6',
+  reviewUrl: 'https://www.google.com/maps/place//@31.9598847,-95.2844851,17z/data=!3m1!4b1!4m3!3m2!1s0x86483dd35ef4dee5:0x689efa7598d97f59!12e1?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
+  embedUrl: 'https://www.google.com/maps?q=1016+W+Rusk+St+Unit+5,+Jacksonville,+TX+75766,+United+States&output=embed',
+} as const
 const heroImages = [
   ['/images/housing.webp', 'Remote workforce housing trailers arranged for a project basecamp'],
   ['/images/catalog/bunkhouse-trailers-960.webp', 'Sleeper and bunkbed trailer accommodation for a remote workforce'],
@@ -162,6 +171,24 @@ function ServiceAreasHub({ data, LinkComponent }: { data: SiteData; LinkComponen
   return <><section className="location-hub-hero"><div><span className="kicker light">{data.company_profile.positioning.toUpperCase()}</span><h1>Remote Workforce Housing Service Areas</h1><p>{data.service_profile.service_description}</p><LinkComponent className="button" href="/contact-us/">{data.company_profile.primary_cta} <ArrowRight/></LinkComponent></div><HeroMedia/></section><StateGrid states={data.location_data.state_pages} LinkComponent={LinkComponent}/><ProjectFitModule data={data}/></>
 }
 
+function TexasOfficeSection() {
+  return <section className="texas-office" aria-labelledby="texas-office-title">
+    <div className="texas-office-details">
+      <span className="kicker light">YOUR TEXAS RENTAL TEAM</span>
+      <h2 id="texas-office-title">{TEXAS_OFFICE.name}</h2>
+      <address>{TEXAS_OFFICE.addressLines.map(line => <span key={line}>{line}</span>)}</address>
+      <a className="texas-office-phone" href={`tel:${TEXAS_OFFICE.phoneE164}`} aria-label={`Call ${TEXAS_OFFICE.name} at ${TEXAS_OFFICE.phoneDisplay}`}><Phone aria-hidden="true"/>{TEXAS_OFFICE.phoneDisplay}</a>
+      <div className="texas-office-actions">
+        <a className="texas-map-link" href={TEXAS_OFFICE.mapsUrl} target="_blank" rel="noopener noreferrer">View on Google Maps <ExternalLink aria-hidden="true"/></a>
+        <a className="texas-review-link" href={TEXAS_OFFICE.reviewUrl} target="_blank" rel="noopener noreferrer">Review us on Google <ExternalLink aria-hidden="true"/></a>
+      </div>
+    </div>
+    <div className="texas-office-map">
+      <iframe title={`Map showing ${TEXAS_OFFICE.name} in Jacksonville, Texas`} src={TEXAS_OFFICE.embedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" allowFullScreen/>
+    </div>
+  </section>
+}
+
 function StatePage({ state, cities, index, data, LinkComponent, leadForm }: { state: StateRecord; cities: CityRecord[]; index: number; data: SiteData; LinkComponent: ComponentType<LinkProps>; leadForm: ReactNode }) {
   const stateSlug = slugify(state.state)
   return <>
@@ -170,6 +197,7 @@ function StatePage({ state, cities, index, data, LinkComponent, leadForm }: { st
     <section className="section city-directory"><div className="section-heading"><div><span className="kicker">CITIES SERVED IN {state.state.toUpperCase()}</span><h2>{cities.length} service areas.</h2></div><p>{data.inventory.family_definition}</p></div><div className="city-card-grid">{cities.map(city => <LinkComponent href={`/${stateSlug}/${city.page_layout_data.slug}/`} key={city.page_layout_data.slug}><MapPin/><span><strong>{city.representative_city}, {city.state}</strong><small>{city.page_layout_data.availability_label} • {etaLabel(city)}</small></span><ArrowRight/></LinkComponent>)}</div></section>
     <section className="section location-service-summary"><div><span className="kicker">RELEVANT SERVICE INFORMATION</span><h2>{data.inventory.family_name}</h2><p>{data.inventory.inventory_status}</p></div><div className="source-backed-summary"><article><Users/><small>Pricing basis</small><p>{data.service_profile.pricing.pricing_basis}</p></article><article><Truck/><small>Deployment timing</small><p>{data.service_profile.delivery.typical_eta}</p></article><article><ShieldCheck/><small>Availability</small><p>{data.service_profile.delivery.availability_fallback}</p></article></div></section>
     <ProjectFitModule data={data}/>
+    {state.state === 'Texas' && <TexasOfficeSection/>}
     <section className="location-contact"><div><span className="kicker">PLAN A {state.state.toUpperCase()} BASECAMP</span><h2>Match accommodation to crew, site and schedule.</h2><p>{data.service_profile.pricing.pricing_basis}</p></div>{leadForm}</section>
   </>
 }
@@ -219,6 +247,7 @@ function CityPage({ city, index, data, LinkComponent, leadForm }: { city: CityRe
     <ArticleModule articles={articles}/>
     {nearby.length > 0 && <section className="section nearby-areas"><div className="section-heading"><div><span className="kicker">NEARBY SERVICE AREAS</span><h2>Continue planning nearby.</h2></div><p>Links follow the location assignments in the site dataset.</p></div><div className="city-card-grid">{nearby.map(area => <LinkComponent href={`/${stateSlug}/${area.slug}/`} key={area.slug}><MapPin/><span><strong>{area.label}</strong><small>Remote workforce housing service area</small></span><ArrowRight/></LinkComponent>)}</div></section>}
     <section className="section faq-section"><div><span className="kicker">FREQUENTLY ASKED QUESTIONS</span><h2>Plan with confirmed information.</h2></div><div>{data.faqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
+    {city.state === 'Texas' && <TexasOfficeSection/>}
     <section className="location-contact"><div><span className="kicker">REQUEST A {city.representative_city.toUpperCase()} QUOTE</span><h2>{data.company_profile.primary_cta}</h2><p>{data.service_profile.pricing.pricing_basis}</p></div>{leadForm}</section>
   </>
 }
