@@ -872,5 +872,9 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - `node node_modules/vite/bin/vite.js build` plus `node scripts/prerender.mjs`: passed; 313 indexable routes prerendered (50 states and 246 cities).
 - Full generated-output reconciliation passed: 313 HTML pages, 313 sitemap entries, 313 unique sitemap URLs, 313 `index,follow` pages, 313 exact self-canonicals represented in the sitemap, and zero issues.
 - Generated robots policy is exactly: allow public paths, disallow `/api/`, and advertise `https://oil-field-base-camps.com/sitemap.xml`. No fake or build-time `lastmod` values were added.
-- Production deployment and live post-release crawl remain pending. These controls establish technical eligibility and discovery consistency; they do not prove or guarantee Google indexing or rankings.
+- Commit `2906968` reached READY production deployment `dpl_dTRCS5qQm2WwS4oWgk3HxhkJz7td` and owns `oil-field-base-camps.com`, `www.oil-field-base-camps.com`, and the Vercel aliases.
+- Live canonical-domain robots check: HTTP 200 and exact policy match (`Allow: /`, `Disallow: /api/`, canonical sitemap declaration).
+- Live canonical-domain sitemap check: HTTP 200, `application/xml`, 313 entries, 313 unique URLs.
+- Complete live crawl of all 313 sitemap URLs: 313 HTTP 200, 313 `index,follow`, 313 exact self-canonicals, no `X-Robots-Tag: noindex`, and zero failures.
+- These results prove crawl/index eligibility and signal consistency on 2026-10-13, not actual Google index inclusion or rankings. No Search Console sitemap submission or URL Inspection request was made because Search Console access is not connected in this task.
 
