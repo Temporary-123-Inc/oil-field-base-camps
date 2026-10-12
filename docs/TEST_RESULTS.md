@@ -845,5 +845,9 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - `node node_modules/vite/bin/vite.js build` plus `node scripts/prerender.mjs`: passed; 313 indexable routes prerendered (50 states, 246 cities).
 - Exact source verification passed for the supplied name, Jacksonville address, `tel:+18883855965`, Maps URL, review place identifier, Texas-only state/city gates and Google Maps CSP allowance.
 - Placeholder scan passed for the forbidden policy/delivery/service placeholders. `git diff --check` passed (line-ending notices only).
-- The in-app browser refused localhost attachment under its URL safety policy. No bypass was attempted; HTTPS production visual QA remains pending at this checkpoint.
+- The in-app browser refused localhost attachment under its URL safety policy. No bypass was attempted.
+- Commit `0b18b59` reached READY production deployment `dpl_41jUr1uhmRBFZs2GFDzbtUupXsXn` and owns `oil-field-base-camps.vercel.app`.
+- Live desktop Texas state QA showed exactly one section with the supplied name, address, phone, Maps link and review link; the Google iframe loaded its map document and visibly rendered the Jacksonville map.
+- Live 390×844 Austin city QA showed exactly one section, a 339.8×254.9 px bounded map, `tel:+18883855965`, and no horizontal overflow (`scrollWidth` 375 at a 390 px viewport).
+- Live 390 px Arkansas control QA showed zero `.texas-office` elements and no horizontal overflow. No forms or third-party review actions were submitted.
 

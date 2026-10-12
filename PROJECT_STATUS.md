@@ -1,10 +1,11 @@
 # Temporary123 Project Status
 
-## 2026-10-13 — Texas local rental team section (release pending)
+## 2026-10-13 — Texas local rental team section (live verified)
 
 - Added the owner-supplied Oil Field Base Camp Rentals USA Jacksonville office to the Texas state guide and all seven Texas city pages; non-Texas location pages are explicitly excluded.
 - The responsive navy/red section includes the exact address and phone, direct Google Maps and Google review actions, and a lazy-loaded address-based Google map. Production CSP permits only Google Maps frames in addition to the existing restrictions.
-- TypeScript, 6/6 focused tests, placeholder/source scans, `git diff --check`, and the 313-route production build passed. The local in-app browser would not attach to localhost under its URL policy, so visual verification is deferred to the HTTPS deployment and is not yet claimed.
+- TypeScript, 6/6 focused tests, placeholder/source scans, `git diff --check`, and the 313-route production build passed. Commit `0b18b59` is live through READY deployment `dpl_41jUr1uhmRBFZs2GFDzbtUupXsXn`.
+- Live HTTPS browser QA confirmed one office module on the Texas state guide and Austin city page, a loaded Google map, exact links and `tel:+18883855965`, zero horizontal overflow at 390 px, and zero office modules on the Arkansas control page.
 
 ## 2026-10-12 — Contact forms to Glide
 
