@@ -851,3 +851,13 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Live 390×844 Austin city QA showed exactly one section, a 339.8×254.9 px bounded map, `tel:+18883855965`, and no horizontal overflow (`scrollWidth` 375 at a 390 px viewport).
 - Live 390 px Arkansas control QA showed zero `.texas-office` elements and no horizontal overflow. No forms or third-party review actions were submitted.
 
+## 2026-10-13 — Sitewide GMB LocalBusiness schema
+
+- Scope: the single JSON-LD identity block inherited by every prerendered route; no visible page content, routing, metadata, canonicals, sitemap policy or form behavior changed.
+- `node node_modules/typescript/bin/tsc -b`: passed.
+- `node node_modules/vitest/vitest.mjs run tests/local-business-schema.test.ts tests/oil-field-rebuild.test.ts`: 2 files, 7 tests passed.
+- `node node_modules/vite/bin/vite.js build` plus `node scripts/prerender.mjs`: passed; 313 indexable routes prerendered.
+- Rendered-output audit: 313/313 `dist/**/index.html` files contain exactly one `LocalBusiness` with the supplied name, phone, street address, logo and image; zero mismatches.
+- Negative assertions passed: no standalone duplicate `Organization`, `AggregateRating`, `priceRange`, or `openingHours` in the active JSON-LD source or rendered HTML.
+- Production deployment and live raw-HTML verification remain pending at this checkpoint. Structured data supports entity clarity and eligibility but does not guarantee rankings or rich results.
+

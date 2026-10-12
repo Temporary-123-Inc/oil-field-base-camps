@@ -455,3 +455,11 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Lazy-load the map and add a narrow `frame-src` allowance for `www.google.com` and `maps.google.com`. Retain all other CSP, frame-ancestor and form-action restrictions.
 - Treat the section as contact/location information, not a claim that every Texas city has a separate office.
 
+## 2026-10-13 — Use one canonical GMB-matched LocalBusiness entity sitewide
+
+- Replace the prior standalone `Organization` object rather than adding a second unrelated entity. The canonical entity uses `https://oil-field-base-camps.com/#localbusiness` on every route.
+- Use `Oil Field Base Camp Rentals USA` as the GMB-matching `name` and retain the public site brand `Oil Field Base Camps` as `alternateName`.
+- Include only owner-supplied or already owner-approved facts: canonical URL, phone, Jacksonville postal address, shield logo, housing image and the previously supplied Google Maps destination.
+- Do not infer ratings, review totals, price range, opening hours, coordinates, service guarantees, certifications or additional offices. These omissions reduce inconsistency risk and avoid unsupported rich-result claims.
+- Keep the schema in prerendered source HTML so crawlers do not depend on client-side execution; do not modify canonicals, page metadata, visible headings or sitemap membership for this change.
+

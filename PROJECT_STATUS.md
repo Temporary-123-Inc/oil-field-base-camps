@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-13 — Sitewide GMB LocalBusiness schema (release pending)
+
+- Replaced the former standalone Organization JSON-LD object with one stable `LocalBusiness` entity matching the owner-supplied GMB name, phone, logo, image and Jacksonville postal address. `Oil Field Base Camps` remains the alternate name.
+- The same entity is emitted in the raw HTML of all 313 indexable routes. No ratings, review counts, price range, opening hours, coordinates, certifications or additional locations were inferred.
+- TypeScript, 7/7 focused tests, `git diff --check`, the 313-route production build, and a 313/313 rendered-schema audit passed. Page content, canonicals, metadata, sitemap membership and routes are unchanged; deployment and live validation remain pending.
+
 ## 2026-10-13 — Texas local rental team section (live verified)
 
 - Added the owner-supplied Oil Field Base Camp Rentals USA Jacksonville office to the Texas state guide and all seven Texas city pages; non-Texas location pages are explicitly excluded.
