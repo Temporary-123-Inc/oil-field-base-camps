@@ -864,3 +864,13 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - The exact owner-supplied canonical-host image URLs returned HTTP 403 to the automated GET client. Their matching source files exist and deploy on the Vercel project, but crawlability through `oil-field-base-camps.com` could not be confirmed from this environment. The requested schema URLs were not substituted.
 - Structured data supports entity clarity and eligibility but does not guarantee rankings, indexing, or rich results. No Search Console recrawl or GMB change was submitted.
 
+## 2026-10-13 — Sitemap and robots indexing controls
+
+- Baseline production check: `robots.txt` and `sitemap.xml` both returned HTTP 200; the sitemap contained 313 unique canonical-host URLs. The generated live robots file allowed public crawling but did not yet exclude `/api/`; the repository source robots file incorrectly referenced `custom-kitchen-hoods.com`.
+- `node node_modules/typescript/bin/tsc -b`: passed.
+- `node node_modules/vitest/vitest.mjs run tests/indexing-controls.test.ts tests/local-business-schema.test.ts tests/location-data.test.ts`: 3 files, 9 tests passed.
+- `node node_modules/vite/bin/vite.js build` plus `node scripts/prerender.mjs`: passed; 313 indexable routes prerendered (50 states and 246 cities).
+- Full generated-output reconciliation passed: 313 HTML pages, 313 sitemap entries, 313 unique sitemap URLs, 313 `index,follow` pages, 313 exact self-canonicals represented in the sitemap, and zero issues.
+- Generated robots policy is exactly: allow public paths, disallow `/api/`, and advertise `https://oil-field-base-camps.com/sitemap.xml`. No fake or build-time `lastmod` values were added.
+- Production deployment and live post-release crawl remain pending. These controls establish technical eligibility and discovery consistency; they do not prove or guarantee Google indexing or rankings.
+

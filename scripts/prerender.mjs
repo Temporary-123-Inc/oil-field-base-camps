@@ -66,6 +66,7 @@ for (const city of data.service_area_data) {
 }
 
 const seen = new Set()
+const indexingErrors = []
 for (const [route, title, description, staticBody] of routes) {
   if (seen.has(route)) throw new Error(`Duplicate prerender route: ${route}`)
   seen.add(route)
@@ -76,11 +77,18 @@ for (const [route, title, description, staticBody] of routes) {
     .replace(/<meta property="og:title" content="[^"]*"\s*\/>/, `<meta property="og:title" content="${escapeHtml(title)}"/>`)
     .replace(/<meta property="og:url" content="[^"]*"\s*\/>/, `<meta property="og:url" content="${origin}${route}"/>`)
     .replace('<div id="root"></div>', `<div id="root">${staticBody}</div>`)
+  if (!/<meta name="robots" content="index,follow"\s*\/>/.test(html)) indexingErrors.push(`${route}: robots`)
+  if (!html.includes(`<link rel="canonical" href="${origin}${route}"/>`)) indexingErrors.push(`${route}: canonical`)
   const dir = route === '/' ? dist : path.join(dist, route)
   fs.mkdirSync(dir, { recursive: true })
   fs.writeFileSync(path.join(dir, 'index.html'), html)
 }
 
-fs.writeFileSync(path.join(dist, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes.map(([route]) => `  <url><loc>${origin}${route}</loc></url>`).join('\n')}\n</urlset>\n`)
-fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${origin}/sitemap.xml\n`)
+if (indexingErrors.length) throw new Error(`Indexing controls failed:\n${indexingErrors.join('\n')}`)
+
+const sitemapUrls = routes.map(([route]) => `${origin}${route}`)
+if (new Set(sitemapUrls).size !== sitemapUrls.length) throw new Error('Sitemap contains duplicate canonical URLs')
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(url => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`
+fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap)
+fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${origin}/sitemap.xml\n`)
 console.log(`Prerendered ${routes.length} indexable routes (${data.location_data.state_pages.length} states, ${data.service_area_data.length} cities).`)

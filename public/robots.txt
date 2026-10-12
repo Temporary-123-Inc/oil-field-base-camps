@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://custom-kitchen-hoods.com/sitemap.xml
+
+Sitemap: https://oil-field-base-camps.com/sitemap.xml

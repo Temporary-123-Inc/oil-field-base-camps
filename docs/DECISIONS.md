@@ -463,3 +463,11 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Do not infer ratings, review totals, price range, opening hours, coordinates, service guarantees, certifications or additional offices. These omissions reduce inconsistency risk and avoid unsupported rich-result claims.
 - Keep the schema in prerendered source HTML so crawlers do not depend on client-side execution; do not modify canonicals, page metadata, visible headings or sitemap membership for this change.
 
+## 2026-10-13 — Generate the sitemap from the publishable route inventory
+
+- Treat the 313 registered public HTML routes as the index-intended inventory: homepage, nine inventory pages, six other core pages, service-area hub, 50 state pages, and 246 city pages.
+- Include only absolute canonical `https://oil-field-base-camps.com` URLs. Require one unique sitemap entry, `index,follow`, and an exact self-canonical for every generated page.
+- Keep `/api/` out of crawl and sitemap inventory because API handlers are not public search landing pages. Do not make missing, private, operational, or arbitrary catch-all URLs indexable.
+- Do not emit synthetic `<lastmod>` dates on every build; add them only when a durable content-change source becomes available.
+- Keep `public/robots.txt` and the generated `dist/robots.txt` aligned so local source, deployment output, and Search Console discovery do not diverge again.
+

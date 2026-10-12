@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-13 — Sitemap and robots indexing controls (release pending)
+
+- Corrected the stale `public/robots.txt` sitemap reference from another company domain to `https://oil-field-base-camps.com/sitemap.xml` and aligned it with the generated production policy. Public pages are allowed; `/api/` remains excluded because it is not an HTML page.
+- Hardened the prerender build to fail on non-`index,follow` pages, incorrect self-canonicals, or duplicate sitemap URLs. The sitemap continues to be generated from the canonical publishable route inventory without synthetic `lastmod` dates.
+- TypeScript, 9/9 focused tests, `git diff --check`, the 313-route build and a full generated-output reconciliation passed: 313 HTML pages, 313 unique sitemap URLs, 313 `index,follow` directives, 313 exact self-canonicals and zero issues. Deployment and live verification remain pending.
+
 ## 2026-10-13 — Sitewide GMB LocalBusiness schema (live verified)
 
 - Replaced the former standalone Organization JSON-LD object with one stable `LocalBusiness` entity matching the owner-supplied GMB name, phone, logo, image and Jacksonville postal address. `Oil Field Base Camps` remains the alternate name.
