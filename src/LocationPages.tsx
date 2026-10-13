@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState, type ComponentType, type ReactNode } from 'react'
 import { ArrowRight, BedDouble, Check, Clock3, ExternalLink, MapPin, Phone, ShieldCheck, Truck, Users } from 'lucide-react'
+import { withManagementBrand } from './brandDescription'
 
 type LinkProps = { href: string; children: ReactNode; className?: string }
 type LocationProps = {
@@ -159,7 +160,7 @@ function LocationHero({ variant, h1, description, availability, price, eta, dist
     {variant === 3 && <HeroMedia/>}
     {variant === 4 && <aside className="hero-info-panel">{facts}</aside>}
     {variant === 4 && <HeroMedia/>}
-    <p className="location-hero-description">{description}</p>
+    <p className="location-hero-description">{withManagementBrand(description)}</p>
   </section>
 }
 
@@ -168,7 +169,7 @@ function StateGrid({ states, LinkComponent }: { states: StateRecord[]; LinkCompo
 }
 
 function ServiceAreasHub({ data, LinkComponent }: { data: SiteData; LinkComponent: ComponentType<LinkProps> }) {
-  return <><section className="location-hub-hero"><div><span className="kicker light">{data.company_profile.positioning.toUpperCase()}</span><h1>Remote Workforce Housing Service Areas</h1><p>{data.service_profile.service_description}</p><LinkComponent className="button" href="/contact-us/">{data.company_profile.primary_cta} <ArrowRight/></LinkComponent></div><HeroMedia/></section><StateGrid states={data.location_data.state_pages} LinkComponent={LinkComponent}/><ProjectFitModule data={data}/></>
+  return <><section className="location-hub-hero"><div><span className="kicker light">{data.company_profile.positioning.toUpperCase()}</span><h1>Remote Workforce Housing Service Areas</h1><p>{withManagementBrand(data.service_profile.service_description)}</p><LinkComponent className="button" href="/contact-us/">{data.company_profile.primary_cta} <ArrowRight/></LinkComponent></div><HeroMedia/></section><StateGrid states={data.location_data.state_pages} LinkComponent={LinkComponent}/><ProjectFitModule data={data}/></>
 }
 
 function TexasOfficeSection() {

@@ -6,6 +6,8 @@ const dist = path.join(root, 'dist')
 const source = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
 const data = JSON.parse(fs.readFileSync(path.join(root, 'public', 'data', 'site-38-remote-workforce-housing-basecamp.json'), 'utf8'))
 const origin = 'https://oil-field-base-camps.com'
+const managementBrand = 'Oil Field Base Camp Facilities and Management'
+const managementBrandSentence = `${managementBrand} coordinates workforce housing, support facilities, and site logistics for each project.`
 
 const inventory = [
   ['mobile-commercial-kitchens', 'Mobile Commercial Kitchen Trailer Rentals'],
@@ -23,6 +25,10 @@ const escapeHtml = value => String(value ?? '').replaceAll('&', '&amp;').replace
 const slugify = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const priceLabel = value => typeof value === 'number' ? `$${value.toLocaleString()}` : value || 'Project-specific quote'
 const displayLabel = value => typeof value === 'object' ? value?.display || 'Confirmed with quote' : value || 'Confirmed with quote'
+const brandedDescription = value => {
+  const normalized = String(value ?? '').trim()
+  return normalized.includes(managementBrand) ? normalized : `${managementBrandSentence} ${normalized}`.trim()
+}
 const etaLabel = city => {
   const range = city.page_layout_data.delivery_time_range
   return (typeof range === 'object' ? range?.display : range) || city.delivery_time_range?.display || city.page_layout_data.estimated_delivery_display || 'Confirmed with quote'
@@ -45,13 +51,13 @@ for (const city of data.service_area_data) {
   citiesByState.get(city.state).push(city)
 }
 
-const hubBody = `<div class="static-location-shell"><main><h1>Remote Workforce Housing Service Areas</h1><p>${escapeHtml(data.service_profile.service_description)}</p><ul>${data.location_data.state_pages.map(state => `<li><a href="/service-areas/${slugify(state.state)}/">${escapeHtml(state.state)} remote workforce housing service areas</a></li>`).join('')}</ul></main></div>`
+const hubBody = `<div class="static-location-shell"><main><h1>Remote Workforce Housing Service Areas</h1><p>${escapeHtml(brandedDescription(data.service_profile.service_description))}</p><ul>${data.location_data.state_pages.map(state => `<li><a href="/service-areas/${slugify(state.state)}/">${escapeHtml(state.state)} remote workforce housing service areas</a></li>`).join('')}</ul></main></div>`
 routes.push(['/service-areas/', 'Remote Workforce Housing Service Areas', data.service_profile.service_description, hubBody])
 
 for (const state of data.location_data.state_pages) {
   const stateSlug = slugify(state.state)
   const cities = citiesByState.get(state.state) || []
-  const body = `<div class="static-location-shell"><nav aria-label="Breadcrumb"><a href="/">Home</a> → <a href="/service-areas/">Service Area Pages</a> → <span>${escapeHtml(state.state)}</span></nav><main><h1>${escapeHtml(state.h1)}</h1><p>${escapeHtml(state.description)}</p><p><strong>Starting price:</strong> ${escapeHtml(priceLabel(state.starting_price))}</p><h2>Cities served in ${escapeHtml(state.state)}</h2><ul>${cities.map(city => `<li><a href="/${stateSlug}/${escapeHtml(city.page_layout_data.slug)}/">${escapeHtml(city.representative_city)}, ${escapeHtml(city.state)}</a></li>`).join('')}</ul></main></div>`
+  const body = `<div class="static-location-shell"><nav aria-label="Breadcrumb"><a href="/">Home</a> → <a href="/service-areas/">Service Area Pages</a> → <span>${escapeHtml(state.state)}</span></nav><main><h1>${escapeHtml(state.h1)}</h1><p>${escapeHtml(brandedDescription(state.description))}</p><p><strong>Starting price:</strong> ${escapeHtml(priceLabel(state.starting_price))}</p><h2>Cities served in ${escapeHtml(state.state)}</h2><ul>${cities.map(city => `<li><a href="/${stateSlug}/${escapeHtml(city.page_layout_data.slug)}/">${escapeHtml(city.representative_city)}, ${escapeHtml(city.state)}</a></li>`).join('')}</ul></main></div>`
   routes.push([`/service-areas/${stateSlug}/`, state.page_title, state.description, body])
 }
 
@@ -61,7 +67,7 @@ for (const city of data.service_area_data) {
   const labels = page.breadcrumb_labels
   const articles = page.related_incident_articles || []
   const nearby = city.nearby_service_area_data || []
-  const body = `<div class="static-location-shell"><nav aria-label="Breadcrumb"><a href="/">${escapeHtml(labels[0])}</a> → <a href="/service-areas/">${escapeHtml(labels[1])}</a> → <a href="/service-areas/${stateSlug}/">${escapeHtml(labels[2])}</a> → <span>${escapeHtml(labels[3])}</span></nav><main><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(page.description)}</p><dl><dt>Availability</dt><dd>${escapeHtml(page.availability_label)}</dd><dt>Starting price</dt><dd>${escapeHtml(priceLabel(page.starting_price))}</dd><dt>Delivery/ETA range</dt><dd>${escapeHtml(etaLabel(city))}</dd><dt>Estimated delivery</dt><dd>${escapeHtml(page.estimated_delivery_display)}</dd><dt>Delivery distance</dt><dd>${escapeHtml(displayLabel(page.delivery_distance))}</dd><dt>Service hours</dt><dd>${escapeHtml(page.service_hours)}</dd><dt>Inventory family</dt><dd>${escapeHtml(page.inventory_family)}</dd></dl>${articles.length ? `<h2>Related incident context</h2>${articles.map(article => `<article><h3>${escapeHtml(article.title || article.headline || 'Related incident article')}</h3>${article.date || article.published_date ? `<time>${escapeHtml(article.date || article.published_date)}</time>` : ''}${article.source_url || article.url || article.link ? `<a href="${escapeHtml(article.source_url || article.url || article.link)}">View source</a>` : ''}</article>`).join('')}` : ''}${nearby.length ? `<h2>Nearby service areas</h2><ul>${nearby.map(area => `<li><a href="/${stateSlug}/${escapeHtml(area.slug)}/">${escapeHtml(area.label)}</a></li>`).join('')}</ul>` : ''}</main></div>`
+  const body = `<div class="static-location-shell"><nav aria-label="Breadcrumb"><a href="/">${escapeHtml(labels[0])}</a> → <a href="/service-areas/">${escapeHtml(labels[1])}</a> → <a href="/service-areas/${stateSlug}/">${escapeHtml(labels[2])}</a> → <span>${escapeHtml(labels[3])}</span></nav><main><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(brandedDescription(page.description))}</p><dl><dt>Availability</dt><dd>${escapeHtml(page.availability_label)}</dd><dt>Starting price</dt><dd>${escapeHtml(priceLabel(page.starting_price))}</dd><dt>Delivery/ETA range</dt><dd>${escapeHtml(etaLabel(city))}</dd><dt>Estimated delivery</dt><dd>${escapeHtml(page.estimated_delivery_display)}</dd><dt>Delivery distance</dt><dd>${escapeHtml(displayLabel(page.delivery_distance))}</dd><dt>Service hours</dt><dd>${escapeHtml(page.service_hours)}</dd><dt>Inventory family</dt><dd>${escapeHtml(page.inventory_family)}</dd></dl>${articles.length ? `<h2>Related incident context</h2>${articles.map(article => `<article><h3>${escapeHtml(article.title || article.headline || 'Related incident article')}</h3>${article.date || article.published_date ? `<time>${escapeHtml(article.date || article.published_date)}</time>` : ''}${article.source_url || article.url || article.link ? `<a href="${escapeHtml(article.source_url || article.url || article.link)}">View source</a>` : ''}</article>`).join('')}` : ''}${nearby.length ? `<h2>Nearby service areas</h2><ul>${nearby.map(area => `<li><a href="/${stateSlug}/${escapeHtml(area.slug)}/">${escapeHtml(area.label)}</a></li>`).join('')}</ul>` : ''}</main></div>`
   routes.push([`/${stateSlug}/${page.slug}/`, page.title, page.description, body])
 }
 

@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-13 — Sitewide Facilities and Management brand introduction (release pending)
+
+- Added the exact owner-supplied name `Oil Field Base Camp Facilities and Management` in a concise, grammatical sentence at the start of every public page's visible below-H1 description.
+- Centralized the sentence across the homepage, shared core/inventory hero, service-area hub, and all JSON-backed state/city heroes. Authoritative location descriptions, H1s, metadata, routes, canonicals, pricing and ETA facts remain unchanged.
+- TypeScript, 10/10 focused tests, `git diff --check`, the 313-route production build, and an exact 297/297 raw-location-introduction audit passed. Deployment and live visual verification are pending.
+
 ## 2026-10-13 — Sitemap and robots indexing controls (live verified)
 
 - Corrected the stale `public/robots.txt` sitemap reference from another company domain to `https://oil-field-base-camps.com/sitemap.xml` and aligned it with the generated production policy. Public pages are allowed; `/api/` remains excluded because it is not an HTML page.

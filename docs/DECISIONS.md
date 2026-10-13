@@ -471,3 +471,7 @@ A verified Git bundle protects the committed public-indexability source and prio
 - Do not emit synthetic `<lastmod>` dates on every build; add them only when a durable content-change source becomes available.
 - Keep `public/robots.txt` and the generated `dist/robots.txt` aligned so local source, deployment output, and Search Console discovery do not diverge again.
 
+## 2026-10-13 — Treat the requested name as a visible hero-introduction brand phrase
+
+The owner asked for `Oil Field Base Camp Facilities and Management` in the description below every H1. We render it once in the grammatical sentence “Oil Field Base Camp Facilities and Management coordinates workforce housing, support facilities, and site logistics for each project.” Shared presentation helpers prepend it without rewriting the authoritative JSON or changing metadata. The helper is idempotent to prevent duplicate brand text.
+

@@ -878,3 +878,12 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Complete live crawl of all 313 sitemap URLs: 313 HTTP 200, 313 `index,follow`, 313 exact self-canonicals, no `X-Robots-Tag: noindex`, and zero failures.
 - These results prove crawl/index eligibility and signal consistency on 2026-10-13, not actual Google index inclusion or rankings. No Search Console sitemap submission or URL Inspection request was made because Search Console access is not connected in this task.
 
+## 2026-10-13 — Sitewide Facilities and Management brand introduction
+
+- `git diff --check`: passed (line-ending notices only).
+- `node node_modules/typescript/bin/tsc -b`: passed.
+- Focused Vitest: 10/10 passed across `brand-description`, authoritative location data, and indexing controls.
+- Production build: passed; Vite build completed and `scripts/prerender.mjs` generated 313 indexable routes (50 states, 246 cities).
+- Generated raw HTML audit: passed 297/297 service-area hub, state and city routes; the exact brand phrase appears once in each static location introduction.
+- Release/live browser verification: pending.
+
