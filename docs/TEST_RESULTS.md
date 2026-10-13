@@ -895,5 +895,6 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - `node node_modules/typescript/bin/tsc -b`: passed.
 - Focused Vitest: 9/9 passed across homepage copy, shared brand descriptions and indexing controls.
 - Production build: passed; Vite completed and `scripts/prerender.mjs` generated all 313 indexable routes.
-- Release/live responsive verification: pending.
+- Release: commit `ba138a3` reached READY production deployment `dpl_8pNtrkSMzcNtNdAbdTBn8Avskhcc`.
+- Live desktop and 375 px mobile browser checks passed: the H1 is `Remote Workforce Housing Basecamp Rentals`, the revised paragraph is visible, and the document has no horizontal overflow. The mobile hero measured about 543 px tall and retained visible CTA and phone actions.
 

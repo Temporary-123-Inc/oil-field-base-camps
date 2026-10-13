@@ -1,10 +1,10 @@
 # Temporary123 Project Status
 
-## 2026-10-13 — Homepage browser-comment copy correction (release pending)
+## 2026-10-13 — Homepage browser-comment copy correction (live verified)
 
 - Removed `Trailer` from the homepage H1, which now reads `Remote Workforce Housing Basecamp Rentals`.
 - Replaced the homepage hero description with the owner-requested shower trailer, shower/restroom combination, food service, refrigeration, laundry and sleeper/bunkbed facility wording, with punctuation and plural agreement corrected. Other page templates retain the Facilities and Management brand introduction.
-- TypeScript, 9/9 focused tests, `git diff --check`, and the complete 313-route production build passed. Deployment and live responsive verification are pending.
+- TypeScript, 9/9 focused tests, `git diff --check`, and the complete 313-route production build passed. Commit `ba138a3` is live through READY deployment `dpl_8pNtrkSMzcNtNdAbdTBn8Avskhcc`; desktop and 375 px mobile checks confirmed the exact revised H1 and paragraph with no horizontal overflow.
 
 ## 2026-10-13 — Sitewide Facilities and Management brand introduction (live verified)
 
