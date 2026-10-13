@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-13 — Homepage primary family SEO and photo marquee (release pending)
+
+- Added a new homepage section immediately before `From Brief to Basecamp` for Remote Basecamp, Man Camp & Workforce Housing. Three readable paragraphs include all nine facility families and the requested rental/leasing, temporary/modular/mobile/portable, emergency/onsite, construction/renovation/industrial-cleanup, and short-/long-term intent language.
+- Added a full-width photo marquee using the nine existing commercial inventory images. It has an explicit pause/play control, pauses on hover, uses transform-only motion, and becomes a non-animated horizontal gallery under `prefers-reduced-motion`.
+- TypeScript, 9/9 focused tests, `git diff --check`, and the complete 313-route production build passed. Deployment and live responsive/interaction verification are pending.
+
 ## 2026-10-13 — Homepage browser-comment copy correction (live verified)
 
 - Removed `Trailer` from the homepage H1, which now reads `Remote Workforce Housing Basecamp Rentals`.

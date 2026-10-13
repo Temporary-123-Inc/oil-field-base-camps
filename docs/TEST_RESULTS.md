@@ -898,3 +898,12 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Release: commit `ba138a3` reached READY production deployment `dpl_8pNtrkSMzcNtNdAbdTBn8Avskhcc`.
 - Live desktop and 375 px mobile browser checks passed: the H1 is `Remote Workforce Housing Basecamp Rentals`, the revised paragraph is visible, and the document has no horizontal overflow. The mobile hero measured about 543 px tall and retained visible CTA and phone actions.
 
+## 2026-10-13 — Homepage primary family SEO and photo marquee
+
+- `git diff --check`: passed (line-ending notices only).
+- `node node_modules/typescript/bin/tsc -b`: passed.
+- Focused Vitest: 9/9 passed across the new family section, homepage copy and indexing controls.
+- Production build: passed; Vite completed and `scripts/prerender.mjs` generated all 313 indexable routes.
+- Source assertions confirm all nine facility families, requested long-tail concepts, section placement before `Process`, duplicated marquee imagery, pause/play control and reduced-motion override.
+- Release/live visual and interaction verification: pending.
+

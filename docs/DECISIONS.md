@@ -479,3 +479,7 @@ The owner asked for `Oil Field Base Camp Facilities and Management` in the descr
 
 The owner's browser comments explicitly replace the homepage H1 and hero paragraph. The homepage therefore no longer uses the shared Facilities and Management prefix; shared core, inventory, service-area, state and city introductions continue to use it. The supplied facility names were normalized only for grammar and readability: plural nouns, serial commas and `shower-and-restroom combination trailers`.
 
+## 2026-10-13 — Present long-tail homepage terms as customer-oriented planning copy
+
+The requested primary-family and subkeyword terms are included in three complete paragraphs rather than a search-engine keyword list. The photo marquee reuses the verified nine inventory images, is decorative to assistive technology because the same categories are stated in indexable text, exposes a pause/play control, and disables automatic motion for reduced-motion users.
+
