@@ -905,5 +905,7 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Focused Vitest: 9/9 passed across the new family section, homepage copy and indexing controls.
 - Production build: passed; Vite completed and `scripts/prerender.mjs` generated all 313 indexable routes.
 - Source assertions confirm all nine facility families, requested long-tail concepts, section placement before `Process`, duplicated marquee imagery, pause/play control and reduced-motion override.
-- Release/live visual and interaction verification: pending.
+- Release: commit `9fbd22b` reached READY production deployment `dpl_JBxVP2cqbrt8v2bTGPbUwyM4rdC3`.
+- Live desktop browser QA confirmed the section precedes `From Brief to Basecamp`, the track uses the intended running animation, all four viewport-visible photos loaded, the explicit control paused the track and changed to `Play photo gallery`, and the page had no horizontal overflow.
+- Live 375 px mobile QA confirmed the section and heading, all three paragraphs, visible control, contained 340 px copy width and zero document overflow.
 
