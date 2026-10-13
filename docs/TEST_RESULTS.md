@@ -885,5 +885,7 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Focused Vitest: 10/10 passed across `brand-description`, authoritative location data, and indexing controls.
 - Production build: passed; Vite build completed and `scripts/prerender.mjs` generated 313 indexable routes (50 states, 246 cities).
 - Generated raw HTML audit: passed 297/297 service-area hub, state and city routes; the exact brand phrase appears once in each static location introduction.
-- Release/live browser verification: pending.
+- Release: commit `e4314a0` reached READY production deployment `dpl_5hhpd3EWJ8tRtdRPWkVn1rso14TU`.
+- Live HTTPS desktop browser checks passed on the homepage, inventory, Contact, service-area hub, Texas state and Austin city templates: H1 and branded introduction were visible, the exact phrase appeared once, and no horizontal overflow was present.
+- Live 375 px mobile browser checks passed on the homepage, Contact, Texas state and Austin city templates: H1/introduction remained visible, the exact phrase appeared once, and no horizontal overflow was present.
 
