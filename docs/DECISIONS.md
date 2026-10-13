@@ -475,3 +475,7 @@ A verified Git bundle protects the committed public-indexability source and prio
 
 The owner asked for `Oil Field Base Camp Facilities and Management` in the description below every H1. We render it once in the grammatical sentence “Oil Field Base Camp Facilities and Management coordinates workforce housing, support facilities, and site logistics for each project.” Shared presentation helpers prepend it without rewriting the authoritative JSON or changing metadata. The helper is idempotent to prevent duplicate brand text.
 
+## 2026-10-13 — Latest homepage copy overrides the sitewide introduction on home only
+
+The owner's browser comments explicitly replace the homepage H1 and hero paragraph. The homepage therefore no longer uses the shared Facilities and Management prefix; shared core, inventory, service-area, state and city introductions continue to use it. The supplied facility names were normalized only for grammar and readability: plural nouns, serial commas and `shower-and-restroom combination trailers`.
+

@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-13 — Homepage browser-comment copy correction (release pending)
+
+- Removed `Trailer` from the homepage H1, which now reads `Remote Workforce Housing Basecamp Rentals`.
+- Replaced the homepage hero description with the owner-requested shower trailer, shower/restroom combination, food service, refrigeration, laundry and sleeper/bunkbed facility wording, with punctuation and plural agreement corrected. Other page templates retain the Facilities and Management brand introduction.
+- TypeScript, 9/9 focused tests, `git diff --check`, and the complete 313-route production build passed. Deployment and live responsive verification are pending.
+
 ## 2026-10-13 — Sitewide Facilities and Management brand introduction (live verified)
 
 - Added the exact owner-supplied name `Oil Field Base Camp Facilities and Management` in a concise, grammatical sentence at the start of every public page's visible below-H1 description.

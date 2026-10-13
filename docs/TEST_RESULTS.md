@@ -889,3 +889,11 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Live HTTPS desktop browser checks passed on the homepage, inventory, Contact, service-area hub, Texas state and Austin city templates: H1 and branded introduction were visible, the exact phrase appeared once, and no horizontal overflow was present.
 - Live 375 px mobile browser checks passed on the homepage, Contact, Texas state and Austin city templates: H1/introduction remained visible, the exact phrase appeared once, and no horizontal overflow was present.
 
+## 2026-10-13 — Homepage browser-comment copy correction
+
+- `git diff --check`: passed (line-ending notices only).
+- `node node_modules/typescript/bin/tsc -b`: passed.
+- Focused Vitest: 9/9 passed across homepage copy, shared brand descriptions and indexing controls.
+- Production build: passed; Vite completed and `scripts/prerender.mjs` generated all 313 indexable routes.
+- Release/live responsive verification: pending.
+

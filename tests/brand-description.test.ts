@@ -28,8 +28,7 @@ describe('sitewide below-H1 brand description', () => {
     expect(branded.match(new RegExp(MANAGEMENT_BRAND, 'g'))).toHaveLength(1)
   })
 
-  it('covers every shared public H1 template', () => {
-    expect(main).toContain("<p>{withManagementBrand('Remote workforce housing")
+  it('covers every shared non-home public H1 template', () => {
     expect(main).toContain('<h1>{title}</h1><p>{withManagementBrand(text)}</p>')
     expect(locations).toContain('<p className="location-hero-description">{withManagementBrand(description)}</p>')
     expect(locations).toContain('<h1>Remote Workforce Housing Service Areas</h1><p>{withManagementBrand(data.service_profile.service_description)}</p>')
