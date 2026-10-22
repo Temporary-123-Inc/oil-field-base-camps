@@ -4,9 +4,9 @@
 
 Root task owns the destination-wide rebrand and rebuild on `codex/rebuild-oil-field-base-camps`: shared React shell, navigation, homepage, Super 9 inventory pages, calculator, contact/Glide webhook, SEO output, design system, tests, and target-specific rebuild evidence. The destination repository was empty; work is based on verified Temporary123 template commit `d8948d55241b6ed6dfdc7f1734d3ea4a680cedbc`. Existing template history is source material, not concurrent destination work.
 
-## 2026-10-23 Homepage Jacksonville internal link — Complete locally; release pending
+## 2026-10-23 Homepage Jacksonville internal link — Complete; live verified
 
-Current task added one contextual homepage link to `/texas/jacksonville-texas/` in the primary workforce-housing copy and the matching prerendered homepage HTML. Focused tests, type-check, the 314-route production build, raw-link checks and `git diff --check` passed. The homepage layout, Jacksonville route, location facts, metadata, forms, and unrelated work were preserved.
+Current task added one contextual homepage link to `/texas/jacksonville-texas/` in the primary workforce-housing copy and the matching prerendered homepage HTML. Focused tests, type-check, the 314-route production build, raw-link checks and `git diff --check` passed. Commit `5ee3ac0` is live through READY deployment `dpl_6HMKQ6Dx2HwQGY9biWkoxvaa5Hy6`; live source and destination checks passed. The homepage layout, Jacksonville route, location facts, metadata, forms, and unrelated work were preserved.
 
 ## 2026-09-26 direct-answer guide release — Active
 

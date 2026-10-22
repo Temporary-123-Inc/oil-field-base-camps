@@ -1,10 +1,11 @@
 # Temporary123 Project Status
 
-## 2026-10-23 — Homepage Jacksonville internal link (release pending)
+## 2026-10-23 — Homepage Jacksonville internal link (live verified)
 
 - Added a descriptive homepage link from the primary workforce-housing section to `/texas/jacksonville-texas/` so visitors and crawlers can discover the Jacksonville city page in a relevant content context.
 - Mirrored the same link and anchor wording in the prerendered homepage HTML; no location facts, route metadata, forms, or layout structure changed.
 - Focused tests passed 8/8, TypeScript passed, the production build generated 314 indexable routes, raw homepage output contains the exact internal link, and `git diff --check` passed.
+- Commit `5ee3ac0` is live through READY production deployment `dpl_6HMKQ6Dx2HwQGY9biWkoxvaa5Hy6`; the live homepage returned HTTP 200 with exactly one matching link and anchor, and the Jacksonville destination returned HTTP 200 with its intended canonical.
 
 ## 2026-10-13 — Homepage primary family SEO and photo marquee (live verified)
 

@@ -941,5 +941,7 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - `pnpm run build`: passed; Vite built successfully and prerendered 314 indexable routes (50 states, 247 cities).
 - Generated `dist/index.html` contains one descriptive anchor to `/texas/jacksonville-texas/` with the text `Jacksonville, Texas remote workforce housing basecamp trailer rentals`.
 - `git diff --check`: passed with line-ending notices only.
-- Release and live verification remain pending.
+- Release: commit `5ee3ac0` pushed to organization `main`; production deployment `dpl_6HMKQ6Dx2HwQGY9biWkoxvaa5Hy6` reached READY.
+- Live homepage check: HTTP 200, exactly one `/texas/jacksonville-texas/` anchor, and the exact descriptive anchor text present in raw HTML.
+- Live destination check: HTTP 200 with the intended canonical `https://oil-field-base-camps.com/texas/jacksonville-texas/`.
 
