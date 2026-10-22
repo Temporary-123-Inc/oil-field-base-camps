@@ -923,3 +923,13 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Release: implementation commit `b7d3147` pushed to organization `main`; production deployment `dpl_2whZzC5HuhksgPwKXtLjq8R5H5e3` reached READY.
 - Live `https://oil-field-base-camps.vercel.app/texas/jacksonville-texas/` browser QA confirmed the exact title, H1, breadcrumb, quote-based facts, hero imagery, five FAQ controls, verified hours, address, phone, profile link, review link and embedded map container.
 
+## 2026-10-23 — Jacksonville Google profile detail refresh
+
+- Evidence source: owner-supplied Google profile screenshot showing `Oil Field Base Camp Rentals USA`, `5.0` with `4` reviews, category `Trailer rental service`, the Jacksonville address, `Open 24 hours`, canonical website and `+1 888-385-5965`.
+- `pnpm run typecheck`: passed.
+- Focused Vitest (`location-data`, `texas-office`, `local-business-schema`, `indexing-controls`): 4 files and 13 tests passed.
+- `pnpm run build`: passed; Vite built and prerendered 314 indexable routes (50 states, 247 cities).
+- Raw output includes the category, `5.0 out of 5 stars`, `4 Google reviews`, website, phone and address in the Jacksonville business block; the shared raw LocalBusiness schema contains one `AggregateRating` with `ratingValue: 5.0`, `reviewCount: 4`, and `bestRating: 5`.
+- Local desktop browser QA confirmed the rating row, category, address, hours, phone, website and both Google actions render legibly in the existing responsive business block. No form or third-party review action was submitted.
+- Release: pending commit, push and production verification.
+

@@ -28,6 +28,10 @@ describe('authoritative location dataset', () => {
     expect(city.local_business_profile.profile_url).toBe('https://maps.google.com/?cid=7538738209247297369')
     expect(city.local_business_profile.review_url).toBe('https://g.page/r/CVl_2Zh1-p5oEAE/review')
     expect(city.local_business_profile.hours_display).toBe('Open 24 hours, Monday–Sunday')
+    expect(city.local_business_profile.category).toBe('Trailer rental service')
+    expect(city.local_business_profile.rating_value).toBe(5)
+    expect(city.local_business_profile.review_count).toBe(4)
+    expect(city.local_business_profile.website_url).toBe('https://oil-field-base-camps.com/')
     expect(city.faqs).toHaveLength(5)
   })
 

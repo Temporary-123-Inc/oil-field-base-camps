@@ -38,6 +38,12 @@ describe('GMB-matched LocalBusiness structured data', () => {
         opens: '00:00',
         closes: '23:59',
       }),
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: '5.0',
+        reviewCount: '4',
+        bestRating: '5',
+      },
     }))
   })
 
@@ -45,7 +51,7 @@ describe('GMB-matched LocalBusiness structured data', () => {
     const sourceSchemas = schemas(sourceHtml)
     expect(sourceSchemas.filter(schema => schema['@type'] === 'Organization')).toHaveLength(0)
     expect(sourceSchemas.filter(schema => schema['@type'] === 'LocalBusiness')).toHaveLength(1)
-    expect(sourceHtml).not.toContain('AggregateRating')
+    expect(sourceHtml).toContain('AggregateRating')
     expect(sourceHtml).not.toContain('priceRange')
     expect(sourceHtml).toContain('openingHoursSpecification')
   })

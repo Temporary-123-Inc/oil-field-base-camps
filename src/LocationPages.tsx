@@ -25,6 +25,10 @@ type LocalBusinessProfile = {
   profile_url: string
   review_url: string
   map_embed_url: string
+  category?: string
+  rating_value?: number
+  review_count?: number
+  website_url?: string
 }
 type CityRecord = {
   state: string
@@ -102,6 +106,10 @@ const TEXAS_OFFICE = {
   phoneDisplay: '1-888-385-5965',
   phoneE164: '+18883855965',
   hoursDisplay: 'Open 24 hours, Monday–Sunday',
+  category: 'Trailer rental service',
+  ratingValue: 5.0,
+  reviewCount: 4,
+  websiteUrl: 'https://oil-field-base-camps.com/',
   mapsUrl: 'https://maps.google.com/?cid=7538738209247297369',
   reviewUrl: 'https://g.page/r/CVl_2Zh1-p5oEAE/review',
   embedUrl: 'https://www.google.com/maps?cid=7538738209247297369&output=embed',
@@ -195,9 +203,12 @@ function TexasOfficeSection() {
     <div className="texas-office-details">
       <span className="kicker light">YOUR TEXAS RENTAL TEAM</span>
       <h2 id="texas-office-title">{TEXAS_OFFICE.name}</h2>
+      <div className="texas-office-rating" aria-label={`${TEXAS_OFFICE.ratingValue.toFixed(1)} out of 5 stars from ${TEXAS_OFFICE.reviewCount} Google reviews`}><strong>{TEXAS_OFFICE.ratingValue.toFixed(1)}</strong><span aria-hidden="true">★★★★★</span><small>({TEXAS_OFFICE.reviewCount} Google reviews)</small></div>
+      <p className="texas-office-category">{TEXAS_OFFICE.category}</p>
       <address>{TEXAS_OFFICE.addressLines.map(line => <span key={line}>{line}</span>)}</address>
       <p className="texas-office-hours"><Clock3 aria-hidden="true"/><span><strong>Hours:</strong> {TEXAS_OFFICE.hoursDisplay}</span></p>
       <a className="texas-office-phone" href={`tel:${TEXAS_OFFICE.phoneE164}`} aria-label={`Call ${TEXAS_OFFICE.name} at ${TEXAS_OFFICE.phoneDisplay}`}><Phone aria-hidden="true"/>{TEXAS_OFFICE.phoneDisplay}</a>
+      <a className="texas-office-website" href={TEXAS_OFFICE.websiteUrl}>oil-field-base-camps.com <ExternalLink aria-hidden="true"/></a>
       <div className="texas-office-actions">
         <a className="texas-map-link" href={TEXAS_OFFICE.mapsUrl} target="_blank" rel="noopener noreferrer">View on Google Maps <ExternalLink aria-hidden="true"/></a>
         <a className="texas-review-link" href={TEXAS_OFFICE.reviewUrl} target="_blank" rel="noopener noreferrer">Review us on Google <ExternalLink aria-hidden="true"/></a>

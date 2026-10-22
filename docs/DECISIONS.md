@@ -491,3 +491,9 @@ The requested primary-family and subkeyword terms are included in three complete
 - Do not infer Jacksonville delivery distance, ETA, price or discount from another city. Those fields remain project-quote confirmed. The five FAQs describe the request process and available facility review without inventing guarantees or policies.
 - Assign a durable `2026-10-23` sitemap lastmod only to the new Jacksonville route. Continue omitting synthetic lastmod values from unchanged routes.
 
+## 2026-10-23 — Treat the supplied profile screenshot as rating evidence
+
+- The owner-supplied Google profile screenshot is sufficient evidence for the current visible category, 5.0 rating and 4-review count. Display those facts in the Jacksonville/Texas business block and mirror the numeric summary in the existing LocalBusiness `AggregateRating`.
+- Keep one LocalBusiness entity and the established `@id`; do not add a competing entity or duplicate schema on Jacksonville.
+- Do not invent review text, reviewer identities, price range, coordinates or guarantees. Rating values are point-in-time profile facts and should be updated again if the profile changes.
+

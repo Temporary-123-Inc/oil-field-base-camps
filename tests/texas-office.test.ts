@@ -16,6 +16,10 @@ describe('Texas local office section', () => {
     expect(source).toContain('https://maps.google.com/?cid=7538738209247297369')
     expect(source).toContain('https://g.page/r/CVl_2Zh1-p5oEAE/review')
     expect(source).toContain('Open 24 hours, Monday–Sunday')
+    expect(source).toContain("category: 'Trailer rental service'")
+    expect(source).toContain('ratingValue: 5.0')
+    expect(source).toContain('reviewCount: 4')
+    expect(source).toContain("websiteUrl: 'https://oil-field-base-camps.com/'")
   })
 
   it('renders only on the Texas state page and Texas city pages', () => {
