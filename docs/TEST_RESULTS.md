@@ -931,5 +931,6 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - `pnpm run build`: passed; Vite built and prerendered 314 indexable routes (50 states, 247 cities).
 - Raw output includes the category, `5.0 out of 5 stars`, `4 Google reviews`, website, phone and address in the Jacksonville business block; the shared raw LocalBusiness schema contains one `AggregateRating` with `ratingValue: 5.0`, `reviewCount: 4`, and `bestRating: 5`.
 - Local desktop browser QA confirmed the rating row, category, address, hours, phone, website and both Google actions render legibly in the existing responsive business block. No form or third-party review action was submitted.
-- Release: pending commit, push and production verification.
+- Release: commit `48dbd67` pushed to organization `main`; production deployment `dpl_13ZqsUvZcNjo6tePiGfrJaZjKMCw` reached READY.
+- Live raw HTML check passed on `/texas/jacksonville-texas/`: title/H1 present, category present, visible 5.0/4-review summary present, exact AggregateRating present, and LocalBusiness count exactly one. Live rendered accessibility output also exposed the rating, category, address, hours, phone, website and both Google actions.
 

@@ -323,9 +323,10 @@ Built a compact 16-route Oil Field Base Camps website from the approved Temporar
 - Focused type/data/indexing/schema/office tests passed. Raw output and local desktop browser QA passed. The broad legacy test command remains non-green because 51 unrelated suites require absent `cheerio`, Firebase and Playwright packages, and four old assertions fail; this boundary predates and is outside the Jacksonville implementation.
 - Release state: implementation commit `b7d3147` pushed to organization `main`; matching production deployment `dpl_2whZzC5HuhksgPwKXtLjq8R5H5e3` reached READY. Live Vercel QA confirmed the exact title, H1, breadcrumb, quote-based facts, hero imagery, five FAQ controls, verified hours, address, phone, profile link, review link and map container.
 
-## 2026-10-23 — Jacksonville Google profile detail refresh (local complete; release pending)
+## 2026-10-23 — Jacksonville Google profile detail refresh (live)
 
 - Updated the visible Texas/Jacksonville business block from the owner-supplied profile screenshot with the category `Trailer rental service`, 5.0 rating, 4 Google reviews, exact address, 24-hour status, canonical website and phone.
 - Added the screenshot-supported 5.0/4-review `AggregateRating` to the one existing sitewide LocalBusiness entity. No review text, price range, coordinates or other unsupported facts were added.
-- TypeScript, 13/13 focused data/profile/schema/indexing tests and the complete 314-route production build passed. Raw prerendered Jacksonville HTML and the desktop profile-card presentation passed local verification. Commit, push and production verification remain pending.
+- TypeScript, 13/13 focused data/profile/schema/indexing tests and the complete 314-route production build passed. Raw prerendered Jacksonville HTML and the desktop profile-card presentation passed local verification.
+- Release state: commit `48dbd67` pushed to organization `main`; matching production deployment `dpl_13ZqsUvZcNjo6tePiGfrJaZjKMCw` reached READY. Live raw HTML and rendered accessibility checks confirmed the visible rating/category/profile facts and exactly one LocalBusiness entity with the matching AggregateRating.
 
