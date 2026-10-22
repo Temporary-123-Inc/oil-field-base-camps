@@ -909,3 +909,16 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Live desktop browser QA confirmed the section precedes `From Brief to Basecamp`, the track uses the intended running animation, all four viewport-visible photos loaded, the explicit control paused the track and changed to `Play photo gallery`, and the page had no horizontal overflow.
 - Live 375 px mobile QA confirmed the section and heading, all three paragraphs, visible control, contained 340 px copy width and zero document overflow.
 
+## 2026-10-23 — Jacksonville, Texas city page and Google profile schema
+
+- Profile evidence: Google Maps CID `7538738209247297369` resolved to `Oil Field Base Camp Rentals USA`, the supplied Jacksonville address and phone, and showed every day as `Open 24 hours`.
+- `pnpm run typecheck`: passed.
+- Focused Vitest (`location-data`, `indexing-controls`, `texas-office`, `local-business-schema`): passed.
+- `pnpm run build`: passed; Vite built successfully and prerendered 314 indexable routes (50 states, 247 cities).
+- Raw Jacksonville HTML audit: exact H1, exact three-level visible breadcrumb, five visible FAQs, `BreadcrumbList`, `FAQPage`, 24/7 hours, profile CID, review link and profile-derived map embed all present.
+- Sitemap audit: 314 unique `<loc>` entries; exact Jacksonville URL present with `<lastmod>2026-10-23</lastmod>`; exactly one lastmod in the file.
+- Placeholder scan for the five prohibited bracketed policy tokens across `src`, `public`, `dist`, `index.html` and `scripts`: zero matches. `git diff --check`: passed (line-ending notices only).
+- Local desktop browser QA at `http://127.0.0.1:4174/texas/jacksonville-texas/`: exact H1 and `Home → Texas → Jacksonville` visible; hero media and facts rendered; all five FAQ controls appeared; address, 24/7 hours, phone, Google Maps link, review link and embedded map container appeared; no visible above-the-fold overflow observed.
+- Broad `pnpm test`: not green. Results were 27 files passed and 281 tests passed, with 51 unrelated suites unable to import absent legacy dependencies (`cheerio`, Firebase test packages, Playwright) and four unrelated old assertions failing. This is recorded as an unverified repository-wide boundary, not as a Jacksonville regression.
+- Release: pending commit, push and production deployment verification.
+

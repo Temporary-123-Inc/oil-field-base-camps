@@ -13,8 +13,9 @@ describe('Texas local office section', () => {
     expect(source).toContain('1016 W Rusk St Unit 5')
     expect(source).toContain('Jacksonville, TX 75766')
     expect(source).toContain("phoneE164: '+18883855965'")
-    expect(source).toContain('https://maps.app.goo.gl/MrEAT6YpegM3YnGZ6')
-    expect(source).toContain('0x689efa7598d97f59')
+    expect(source).toContain('https://maps.google.com/?cid=7538738209247297369')
+    expect(source).toContain('https://g.page/r/CVl_2Zh1-p5oEAE/review')
+    expect(source).toContain('Open 24 hours, Monday–Sunday')
   })
 
   it('renders only on the Texas state page and Texas city pages', () => {

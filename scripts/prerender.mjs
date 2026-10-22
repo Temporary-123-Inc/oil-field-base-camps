@@ -22,6 +22,7 @@ const inventory = [
 ]
 
 const escapeHtml = value => String(value ?? '').replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#039;')
+const jsonLd = value => `<script type="application/ld+json">${JSON.stringify(value).replaceAll('<', '\\u003c')}</script>`
 const slugify = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 const priceLabel = value => typeof value === 'number' ? `$${value.toLocaleString()}` : value || 'Project-specific quote'
 const displayLabel = value => typeof value === 'object' ? value?.display || 'Confirmed with quote' : value || 'Confirmed with quote'
@@ -67,7 +68,30 @@ for (const city of data.service_area_data) {
   const labels = page.breadcrumb_labels
   const articles = page.related_incident_articles || []
   const nearby = city.nearby_service_area_data || []
-  const body = `<div class="static-location-shell"><nav aria-label="Breadcrumb"><a href="/">${escapeHtml(labels[0])}</a> → <a href="/service-areas/">${escapeHtml(labels[1])}</a> → <a href="/service-areas/${stateSlug}/">${escapeHtml(labels[2])}</a> → <span>${escapeHtml(labels[3])}</span></nav><main><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(brandedDescription(page.description))}</p><dl><dt>Availability</dt><dd>${escapeHtml(page.availability_label)}</dd><dt>Starting price</dt><dd>${escapeHtml(priceLabel(page.starting_price))}</dd><dt>Delivery/ETA range</dt><dd>${escapeHtml(etaLabel(city))}</dd><dt>Estimated delivery</dt><dd>${escapeHtml(page.estimated_delivery_display)}</dd><dt>Delivery distance</dt><dd>${escapeHtml(displayLabel(page.delivery_distance))}</dd><dt>Service hours</dt><dd>${escapeHtml(page.service_hours)}</dd><dt>Inventory family</dt><dd>${escapeHtml(page.inventory_family)}</dd></dl>${articles.length ? `<h2>Related incident context</h2>${articles.map(article => `<article><h3>${escapeHtml(article.title || article.headline || 'Related incident article')}</h3>${article.date || article.published_date ? `<time>${escapeHtml(article.date || article.published_date)}</time>` : ''}${article.source_url || article.url || article.link ? `<a href="${escapeHtml(article.source_url || article.url || article.link)}">View source</a>` : ''}</article>`).join('')}` : ''}${nearby.length ? `<h2>Nearby service areas</h2><ul>${nearby.map(area => `<li><a href="/${stateSlug}/${escapeHtml(area.slug)}/">${escapeHtml(area.label)}</a></li>`).join('')}</ul>` : ''}</main></div>`
+  const isJacksonville = page.slug === 'jacksonville-texas'
+  const cityFaqs = city.faqs || []
+  const breadcrumb = isJacksonville
+    ? `<a href="/">Home</a> → <a href="/service-areas/texas/">Texas</a> → <span>Jacksonville</span>`
+    : `<a href="/">${escapeHtml(labels[0])}</a> → <a href="/service-areas/">${escapeHtml(labels[1])}</a> → <a href="/service-areas/${stateSlug}/">${escapeHtml(labels[2])}</a> → <span>${escapeHtml(labels[3])}</span>`
+  const schemas = isJacksonville ? [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${origin}/` },
+        { '@type': 'ListItem', position: 2, name: 'Texas', item: `${origin}/service-areas/texas/` },
+        { '@type': 'ListItem', position: 3, name: 'Jacksonville', item: `${origin}/texas/jacksonville-texas/` },
+      ],
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: cityFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })),
+    },
+  ].map(jsonLd).join('') : ''
+  const business = isJacksonville && city.local_business_profile ? `<section aria-labelledby="jacksonville-business-title"><h2 id="jacksonville-business-title">${escapeHtml(city.local_business_profile.name)}</h2><address>${escapeHtml(city.local_business_profile.street_address)}, ${escapeHtml(city.local_business_profile.address_locality)}, ${escapeHtml(city.local_business_profile.address_region)} ${escapeHtml(city.local_business_profile.postal_code)}, United States</address><p><strong>Hours:</strong> ${escapeHtml(city.local_business_profile.hours_display)}</p><p><a href="tel:${escapeHtml(city.local_business_profile.phone_e164)}">${escapeHtml(city.local_business_profile.phone_display)}</a></p><p><a href="${escapeHtml(city.local_business_profile.profile_url)}">View on Google Maps</a> <a href="${escapeHtml(city.local_business_profile.review_url)}">Review us on Google</a></p><iframe title="Map showing ${escapeHtml(city.local_business_profile.name)} in Jacksonville, Texas" src="${escapeHtml(city.local_business_profile.map_embed_url)}" loading="lazy"></iframe></section>` : ''
+  const faqContent = cityFaqs.length ? `<section><h2>Jacksonville frequently asked questions</h2>${cityFaqs.map(faq => `<article><h3>${escapeHtml(faq.question)}</h3><p>${escapeHtml(faq.answer)}</p></article>`).join('')}</section>` : ''
+  const body = `<div class="static-location-shell">${schemas}<nav aria-label="Breadcrumb">${breadcrumb}</nav><main><h1>${escapeHtml(page.h1)}</h1><p>${escapeHtml(brandedDescription(page.description))}</p><dl><dt>Availability</dt><dd>${escapeHtml(page.availability_label)}</dd><dt>Starting price</dt><dd>${escapeHtml(priceLabel(page.starting_price))}</dd><dt>Delivery/ETA range</dt><dd>${escapeHtml(etaLabel(city))}</dd><dt>Estimated delivery</dt><dd>${escapeHtml(page.estimated_delivery_display)}</dd><dt>Delivery distance</dt><dd>${escapeHtml(displayLabel(page.delivery_distance))}</dd><dt>Service hours</dt><dd>${escapeHtml(page.service_hours)}</dd><dt>Inventory family</dt><dd>${escapeHtml(page.inventory_family)}</dd></dl>${articles.length ? `<h2>Related incident context</h2>${articles.map(article => `<article><h3>${escapeHtml(article.title || article.headline || 'Related incident article')}</h3>${article.date || article.published_date ? `<time>${escapeHtml(article.date || article.published_date)}</time>` : ''}${article.source_url || article.url || article.link ? `<a href="${escapeHtml(article.source_url || article.url || article.link)}">View source</a>` : ''}</article>`).join('')}` : ''}${nearby.length ? `<h2>Nearby service areas</h2><ul>${nearby.map(area => `<li><a href="/${stateSlug}/${escapeHtml(area.slug)}/">${escapeHtml(area.label)}</a></li>`).join('')}</ul>` : ''}${faqContent}${business}</main></div>`
   routes.push([`/${stateSlug}/${page.slug}/`, page.title, page.description, body])
 }
 
@@ -93,8 +117,9 @@ for (const [route, title, description, staticBody] of routes) {
 if (indexingErrors.length) throw new Error(`Indexing controls failed:\n${indexingErrors.join('\n')}`)
 
 const sitemapUrls = routes.map(([route]) => `${origin}${route}`)
+const lastModifiedByRoute = new Map([['/texas/jacksonville-texas/', '2026-10-23']])
 if (new Set(sitemapUrls).size !== sitemapUrls.length) throw new Error('Sitemap contains duplicate canonical URLs')
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.map(url => `  <url><loc>${url}</loc></url>`).join('\n')}\n</urlset>\n`
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${routes.map(([route]) => `  <url><loc>${origin}${route}</loc>${lastModifiedByRoute.has(route) ? `<lastmod>${lastModifiedByRoute.get(route)}</lastmod>` : ''}</url>`).join('\n')}\n</urlset>\n`
 fs.writeFileSync(path.join(dist, 'sitemap.xml'), sitemap)
 fs.writeFileSync(path.join(dist, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /api/\n\nSitemap: ${origin}/sitemap.xml\n`)
 console.log(`Prerendered ${routes.length} indexable routes (${data.location_data.state_pages.length} states, ${data.service_area_data.length} cities).`)

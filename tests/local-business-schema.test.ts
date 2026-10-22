@@ -31,6 +31,13 @@ describe('GMB-matched LocalBusiness structured data', () => {
         postalCode: '75766',
         addressCountry: 'US',
       },
+      hasMap: 'https://maps.google.com/?cid=7538738209247297369',
+      sameAs: ['https://maps.google.com/?cid=7538738209247297369'],
+      openingHoursSpecification: expect.objectContaining({
+        '@type': 'OpeningHoursSpecification',
+        opens: '00:00',
+        closes: '23:59',
+      }),
     }))
   })
 
@@ -40,7 +47,7 @@ describe('GMB-matched LocalBusiness structured data', () => {
     expect(sourceSchemas.filter(schema => schema['@type'] === 'LocalBusiness')).toHaveLength(1)
     expect(sourceHtml).not.toContain('AggregateRating')
     expect(sourceHtml).not.toContain('priceRange')
-    expect(sourceHtml).not.toContain('openingHours')
+    expect(sourceHtml).toContain('openingHoursSpecification')
   })
 
   it('uses crawlable local assets that exist in the public build input', () => {

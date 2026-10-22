@@ -313,3 +313,12 @@ Build finished: 651 pages + 404 prerendered. Static localhost preview at http://
 
 Built a compact 16-route Oil Field Base Camps website from the approved Temporary123 template on `codex/rebuild-oil-field-base-camps`. Added the responsive brand shell, Super 9 inventory menu/pages, homepage inventory grid, industries, process, calculator, about, contact and privacy pages; urgent 24/7 response CTAs; sticky quick-request form; server-side Glide relay; SEO metadata, robots and sitemap. Local checks passed: 2/2 focused tests, TypeScript, production build, 16-route prerender, desktop browser, 390×844 mobile browser with no overflow, and contact form rendering with no console errors. A mocked Glide request passed, but no live Glide row was created because production webhook credentials are not available. Production deployment and live verification were not performed.
 
+## 2026-10-23 — Jacksonville, Texas city page (local complete; release pending)
+
+- Added `/texas/jacksonville-texas/` as the eighth Texas city record in the authoritative site-38 dataset, with the requested H1, Jacksonville-specific planning copy, quote-confirmed logistics, one nearby East Texas route and five visible FAQs.
+- Updated the Texas state guide to list eight city records and link Jacksonville through its exact dataset slug.
+- Reconciled the Texas business block and sitewide LocalBusiness entity to the supplied Google Business Profile: profile-derived map embed, supplied review URL, `sameAs`, `hasMap`, and verified 24/7 Monday–Sunday hours.
+- Added the exact visible breadcrumb `Home → Texas → Jacksonville`, plus matching `BreadcrumbList` and `FAQPage` JSON-LD in client and prerendered output.
+- Production build passed and generated 314 indexable routes (50 states, 247 cities). Jacksonville is the only sitemap entry with `<lastmod>2026-10-23</lastmod>`; no other route received synthetic freshness.
+- Focused type/data/indexing/schema/office tests passed. Raw output and local desktop browser QA passed. The broad legacy test command remains non-green because 51 unrelated suites require absent `cheerio`, Firebase and Playwright packages, and four old assertions fail; this boundary predates and is outside the Jacksonville implementation. Deployment remains pending.
+

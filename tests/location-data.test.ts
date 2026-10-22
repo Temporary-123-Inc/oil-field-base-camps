@@ -10,12 +10,25 @@ describe('authoritative location dataset', () => {
   it('maps every state and city to a unique production route', () => {
     expect(data.site_id).toBe('site-38')
     expect(data.location_data.state_pages).toHaveLength(50)
-    expect(data.service_area_data).toHaveLength(246)
+    expect(data.service_area_data).toHaveLength(247)
     const routes = data.service_area_data.map((city: any) => `/${slugify(city.state)}/${city.page_layout_data.slug}/`)
     expect(new Set(routes).size).toBe(routes.length)
     for (const state of data.location_data.state_pages) {
       expect(data.service_area_data.some((city: any) => city.state === state.state)).toBe(true)
     }
+  })
+
+  it('keeps the Jacksonville record tied to its verified local profile and quote-based logistics', () => {
+    const city = data.service_area_data.find((entry: any) => entry.city_slug === 'jacksonville-texas')
+    expect(city).toBeTruthy()
+    expect(city.state).toBe('Texas')
+    expect(city.page_layout_data.h1).toBe('Jacksonville, Texas Remote Workforce Housing Basecamp Trailer Rentals')
+    expect(city.page_layout_data.delivery_time_range.display).toBe('Confirmed with project quote')
+    expect(city.page_layout_data.delivery_distance.display).toBe('Confirmed with project quote')
+    expect(city.local_business_profile.profile_url).toBe('https://maps.google.com/?cid=7538738209247297369')
+    expect(city.local_business_profile.review_url).toBe('https://g.page/r/CVl_2Zh1-p5oEAE/review')
+    expect(city.local_business_profile.hours_display).toBe('Open 24 hours, Monday–Sunday')
+    expect(city.faqs).toHaveLength(5)
   })
 
   it('keeps city records internally consistent and placeholder-free', () => {

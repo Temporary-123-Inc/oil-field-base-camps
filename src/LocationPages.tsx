@@ -11,6 +11,21 @@ type LocationProps = {
 }
 
 type Article = Record<string, unknown>
+type LocationFaq = { question: string; answer: string }
+type LocalBusinessProfile = {
+  name: string
+  street_address: string
+  address_locality: string
+  address_region: string
+  postal_code: string
+  address_country: string
+  phone_display: string
+  phone_e164: string
+  hours_display: string
+  profile_url: string
+  review_url: string
+  map_embed_url: string
+}
 type CityRecord = {
   state: string
   representative_city: string
@@ -18,6 +33,8 @@ type CityRecord = {
   estimated_distance_range?: string
   city_discount_percent?: number | null
   nearby_service_area_data?: Array<{ label: string; slug: string }>
+  local_business_profile?: LocalBusinessProfile
+  faqs?: LocationFaq[]
   page_layout_data: {
     slug: string
     title: string
@@ -84,9 +101,10 @@ const TEXAS_OFFICE = {
   addressLines: ['1016 W Rusk St Unit 5', 'Jacksonville, TX 75766', 'United States'],
   phoneDisplay: '1-888-385-5965',
   phoneE164: '+18883855965',
-  mapsUrl: 'https://maps.app.goo.gl/MrEAT6YpegM3YnGZ6',
-  reviewUrl: 'https://www.google.com/maps/place//@31.9598847,-95.2844851,17z/data=!3m1!4b1!4m3!3m2!1s0x86483dd35ef4dee5:0x689efa7598d97f59!12e1?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D',
-  embedUrl: 'https://www.google.com/maps?q=1016+W+Rusk+St+Unit+5,+Jacksonville,+TX+75766,+United+States&output=embed',
+  hoursDisplay: 'Open 24 hours, Monday–Sunday',
+  mapsUrl: 'https://maps.google.com/?cid=7538738209247297369',
+  reviewUrl: 'https://g.page/r/CVl_2Zh1-p5oEAE/review',
+  embedUrl: 'https://www.google.com/maps?cid=7538738209247297369&output=embed',
 } as const
 const heroImages = [
   ['/images/housing.webp', 'Remote workforce housing trailers arranged for a project basecamp'],
@@ -129,8 +147,8 @@ function useLocationData() {
   return { data, failed }
 }
 
-function Breadcrumbs({ labels, stateSlug, LinkComponent }: { labels: string[]; stateSlug: string; LinkComponent: ComponentType<LinkProps> }) {
-  const hrefs = ['/', '/service-areas/', `/service-areas/${stateSlug}/`]
+function Breadcrumbs({ labels, stateSlug, LinkComponent, hrefs: suppliedHrefs }: { labels: string[]; stateSlug: string; LinkComponent: ComponentType<LinkProps>; hrefs?: string[] }) {
+  const hrefs = suppliedHrefs || ['/', '/service-areas/', `/service-areas/${stateSlug}/`]
   return <nav className="breadcrumbs" aria-label="Breadcrumb"><ol>{labels.map((label, index) => <li key={`${label}-${index}`}>{index < labels.length - 1 ? <LinkComponent href={hrefs[index] || '#'}>{label}</LinkComponent> : <span aria-current="page">{label}</span>}</li>)}</ol></nav>
 }
 
@@ -178,6 +196,7 @@ function TexasOfficeSection() {
       <span className="kicker light">YOUR TEXAS RENTAL TEAM</span>
       <h2 id="texas-office-title">{TEXAS_OFFICE.name}</h2>
       <address>{TEXAS_OFFICE.addressLines.map(line => <span key={line}>{line}</span>)}</address>
+      <p className="texas-office-hours"><Clock3 aria-hidden="true"/><span><strong>Hours:</strong> {TEXAS_OFFICE.hoursDisplay}</span></p>
       <a className="texas-office-phone" href={`tel:${TEXAS_OFFICE.phoneE164}`} aria-label={`Call ${TEXAS_OFFICE.name} at ${TEXAS_OFFICE.phoneDisplay}`}><Phone aria-hidden="true"/>{TEXAS_OFFICE.phoneDisplay}</a>
       <div className="texas-office-actions">
         <a className="texas-map-link" href={TEXAS_OFFICE.mapsUrl} target="_blank" rel="noopener noreferrer">View on Google Maps <ExternalLink aria-hidden="true"/></a>
@@ -228,6 +247,24 @@ function CityPage({ city, index, data, LinkComponent, leadForm }: { city: CityRe
   const nearby = city.nearby_service_area_data || []
   const rentalInfo = Object.entries(page.rental_information || {})
   const articles = page.related_incident_articles || []
+  const cityFaqs = city.faqs?.length ? city.faqs : data.faqs
+  const isJacksonville = city.page_layout_data.slug === 'jacksonville-texas'
+  const breadcrumbLabels = isJacksonville ? ['Home', 'Texas', 'Jacksonville'] : page.breadcrumb_labels
+  const breadcrumbHrefs = isJacksonville ? ['/', '/service-areas/texas/'] : undefined
+  const breadcrumbSchema = isJacksonville ? {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${ORIGIN}/` },
+      { '@type': 'ListItem', position: 2, name: 'Texas', item: `${ORIGIN}/service-areas/texas/` },
+      { '@type': 'ListItem', position: 3, name: 'Jacksonville', item: `${ORIGIN}/texas/jacksonville-texas/` },
+    ],
+  } : null
+  const faqSchema = isJacksonville ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: cityFaqs.map(faq => ({ '@type': 'Question', name: faq.question, acceptedAnswer: { '@type': 'Answer', text: faq.answer } })),
+  } : null
   const planningModules = [
     { id: 'sleeping_accommodation', content: <article><span className="kicker">PREPARATION + DELIVERY</span><h2>Prepare the site before dispatch.</h2>{data.service_profile.preparation_plan.before_delivery.map(item => <p key={item}>{item}</p>)}<p>{data.service_profile.preparation_plan.additional_equipment_note}</p></article> },
     { id: 'utilities', content: <article><span className="kicker">UTILITIES + CONNECTIONS</span><h2>Confirm the operating dependencies.</h2>{Object.entries(data.service_profile.utilities_plan).map(([key, value]) => key !== 'confirmation_note' && <p key={key}><strong>{key.replaceAll('_', ' ')}.</strong> {value}</p>)}</article> },
@@ -237,7 +274,9 @@ function CityPage({ city, index, data, LinkComponent, leadForm }: { city: CityRe
     return rank(a.id) - rank(b.id)
   })
   return <>
-    <Breadcrumbs labels={page.breadcrumb_labels} stateSlug={stateSlug} LinkComponent={LinkComponent}/>
+    {breadcrumbSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}/ >}
+    {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}/ >}
+    <Breadcrumbs labels={breadcrumbLabels} hrefs={breadcrumbHrefs} stateSlug={stateSlug} LinkComponent={LinkComponent}/>
     <LocationHero variant={(index % 4) + 1} h1={page.h1} description={page.description} availability={page.availability_label} price={priceLabel(page.starting_price)} eta={etaLabel(city)} distance={displayLabel(page.delivery_distance)} cta={data.company_profile.primary_cta} LinkComponent={LinkComponent}/>
     <section className="location-data-strip"><span><Clock3/><b>Service hours</b>{page.service_hours}</span><span><Truck/><b>Estimated delivery</b>{page.estimated_delivery_display}</span><span><MapPin/><b>Delivery distance</b>{displayLabel(page.delivery_distance)}</span><span><BedDouble/><b>Inventory family</b>{page.inventory_family}</span></section>
     <InventoryModule data={data}/>
@@ -247,7 +286,7 @@ function CityPage({ city, index, data, LinkComponent, leadForm }: { city: CityRe
     <section className="section rental-information"><div><span className="kicker">PRICING + RENTAL TERMS</span><h2>{priceLabel(page.starting_price)}</h2><p>{page.starting_price_basis || data.service_profile.pricing.pricing_basis}</p>{city.city_discount_percent != null && <p><strong>Location adjustment:</strong> {city.city_discount_percent}% as provided for this city.</p>}</div><dl>{rentalInfo.map(([key, value]) => <div key={key}><dt>{key.replaceAll('_', ' ')}</dt><dd>{value}</dd></div>)}</dl></section>
     <ArticleModule articles={articles}/>
     {nearby.length > 0 && <section className="section nearby-areas"><div className="section-heading"><div><span className="kicker">NEARBY SERVICE AREAS</span><h2>Continue planning nearby.</h2></div><p>Links follow the location assignments in the site dataset.</p></div><div className="city-card-grid">{nearby.map(area => <LinkComponent href={`/${stateSlug}/${area.slug}/`} key={area.slug}><MapPin/><span><strong>{area.label}</strong><small>Remote workforce housing service area</small></span><ArrowRight/></LinkComponent>)}</div></section>}
-    <section className="section faq-section"><div><span className="kicker">FREQUENTLY ASKED QUESTIONS</span><h2>Plan with confirmed information.</h2></div><div>{data.faqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
+    <section className="section faq-section"><div><span className="kicker">FREQUENTLY ASKED QUESTIONS</span><h2>Plan with confirmed information.</h2></div><div>{cityFaqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</div></section>
     {city.state === 'Texas' && <TexasOfficeSection/>}
     <section className="location-contact"><div><span className="kicker">REQUEST A {city.representative_city.toUpperCase()} QUOTE</span><h2>{data.company_profile.primary_cta}</h2><p>{data.service_profile.pricing.pricing_basis}</p></div>{leadForm}</section>
   </>

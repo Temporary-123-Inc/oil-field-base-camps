@@ -483,3 +483,11 @@ The owner's browser comments explicitly replace the homepage H1 and hero paragra
 
 The requested primary-family and subkeyword terms are included in three complete paragraphs rather than a search-engine keyword list. The photo marquee reuses the verified nine inventory images, is decorative to assistive technology because the same categories are stated in indexable text, exposes a pause/play control, and disables automatic motion for reduced-motion users.
 
+## 2026-10-23 — Publish Jacksonville as a quote-based city record tied to the verified Google profile
+
+- Add Jacksonville to the authoritative site-38 city array and Texas state count so routing, the state directory and sitemap share one source of truth; do not create a disconnected hard-coded route.
+- Use the owner's requested three-level visible breadcrumb `Home → Texas → Jacksonville` and mirror it exactly in `BreadcrumbList`, while preserving the dataset's standard four-label record shape for shared integrity checks.
+- Publish the verified profile hours as 24/7 in the visible Texas business block and global LocalBusiness `OpeningHoursSpecification`. Use the supplied CID URL for both `sameAs` and `hasMap`, and the supplied review URL for the review action.
+- Do not infer Jacksonville delivery distance, ETA, price or discount from another city. Those fields remain project-quote confirmed. The five FAQs describe the request process and available facility review without inventing guarantees or policies.
+- Assign a durable `2026-10-23` sitemap lastmod only to the new Jacksonville route. Continue omitting synthetic lastmod values from unchanged routes.
+

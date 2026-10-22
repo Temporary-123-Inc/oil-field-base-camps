@@ -23,10 +23,11 @@ describe('public indexing controls', () => {
   it('builds the complete intended public inventory without duplicates', () => {
     const fixedRoutes = 17 // home, nine inventory pages, six core pages, and the service-area hub
     const expected = fixedRoutes + data.location_data.state_pages.length + data.service_area_data.length
-    expect(expected).toBe(313)
+    expect(expected).toBe(314)
     expect(prerender).toContain("if (seen.has(route)) throw new Error(`Duplicate prerender route: ${route}`)")
     expect(prerender).toContain("if (new Set(sitemapUrls).size !== sitemapUrls.length) throw new Error('Sitemap contains duplicate canonical URLs')")
     expect(prerender).toContain('Disallow: /api/')
     expect(prerender).toContain('Indexing controls failed:')
+    expect(prerender).toContain("['/texas/jacksonville-texas/', '2026-10-23']")
   })
 })

@@ -748,10 +748,10 @@
       {
         "state": "Texas",
         "page_title": "Texas Remote Workforce Housing Basecamp Trailer Rentals",
-        "region_count": 7,
-        "city_count": 7,
+        "region_count": 8,
+        "city_count": 8,
         "h1": "Texas Remote Workforce Housing Basecamp Trailer Rentals",
-        "description": "Remote workforce housing basecamp trailer rentals in Texas focus on temporary accommodation for project crews. Start with the site, workers, and rental dates, then review the 7 regional service areas, including Austin, Tyler, and Houston. For utility, energy, or field-service work, define the accommodation requirement for the actual assignment. Crew size, rental duration, room-sharing preferences, and any phased mobilization help establish the configuration to request. Ask about sleeping layouts, climate control, and any required restroom, shower, or laundry provision. Supporting facilities and servicing are included only when expressly confirmed in the quote. Before dispatch, confirm placement areas, delivery access, utilities, and the agreed checks before occupancy. Availability, routing, and deployment dates must be confirmed for the actual site; a service-area entry does not establish local fleet inventory. Ask for a housing and basecamp quote that identifies unit configuration, rental dates, transport, setup, and approved extras. No starting rate or automatic location discount is assumed.",
+        "description": "Remote workforce housing basecamp trailer rentals in Texas focus on temporary accommodation for project crews. Start with the site, workers, and rental dates, then review the 8 regional service areas, including Jacksonville, Austin, Tyler, and Houston. For utility, energy, or field-service work, define the accommodation requirement for the actual assignment. Crew size, rental duration, room-sharing preferences, and any phased mobilization help establish the configuration to request. Ask about sleeping layouts, climate control, and any required restroom, shower, or laundry provision. Supporting facilities and servicing are included only when expressly confirmed in the quote. Before dispatch, confirm placement areas, delivery access, utilities, and the agreed checks before occupancy. Availability, routing, and deployment dates must be confirmed for the actual site; a service-area entry does not establish local fleet inventory. Ask for a housing and basecamp quote that identifies unit configuration, rental dates, transport, setup, and approved extras. No starting rate or automatic location discount is assumed.",
         "related_incident_articles": [],
         "incident_research_status": "No workforce-housing-specific incident source has been verified for this page. Omit the incident section until a relevant source is reviewed; do not imply that a reported organization or project rented from this company.",
         "starting_price": null
@@ -27501,6 +27501,134 @@
           "setup": "The quote identifies approved trailer placement, connections, setup, handover checks, and the responsibilities of the company and site operator before occupancy.",
           "extensions": "Request extensions before the scheduled return date; availability, continued site suitability, company approval, and revised pricing must be confirmed.",
           "long_term_rental": "Long-term workforce housing requests are reviewed against project duration, accommodation configuration, fleet availability, and the agreed service scope."
+        }
+      }
+    },
+    {
+      "regional_guide_location": "Jacksonville, Texas",
+      "state": "Texas",
+      "representative_city": "Jacksonville",
+      "nearest_included_top_100_place": null,
+      "estimated_travel_time": "Confirmed with project quote",
+      "eta_minutes": null,
+      "operation_hours": "Open 24 hours, Monday–Sunday",
+      "city_discount_percent": null,
+      "discount_basis": "No automatic location discount is published for Jacksonville workforce housing. Any adjustment requires the approved project quote.",
+      "delivery_time_range": {
+        "min_hours": null,
+        "max_hours": null,
+        "display": "Confirmed with project quote"
+      },
+      "estimated_distance_range": {
+        "min_miles": null,
+        "max_miles": null,
+        "display": "Confirmed with project quote",
+        "basis": "Dispatch origin, route, site access, equipment sourcing, and setup requirements must be confirmed for the project."
+      },
+      "city_slug": "jacksonville-texas",
+      "nearby_service_area_data": [
+        {
+          "label": "Tyler, Texas",
+          "slug": "tyler-texas",
+          "regional_guide_location": "East Texas, Texas",
+          "relationship_rank": 1,
+          "relationship_basis": "Same-state East Texas planning relationship; confirm route and deployment details with the project quote."
+        }
+      ],
+      "site_dispatch_order": null,
+      "site_dispatch_order_note": "Jacksonville delivery timing is confirmed for the actual site, requested configuration, access, availability, and approved dispatch plan.",
+      "availability_note": "Remote workforce housing and basecamp rental requests are reviewed for the Jacksonville project site, crew, dates, approved configuration, and current fleet availability. This page does not establish on-site inventory or a confirmed deployment schedule.",
+      "prices_before_city_discount": {
+        "20_ft": null,
+        "25_ft": null,
+        "30_ft": null,
+        "35_ft": null,
+        "40_ft": null
+      },
+      "prices_after_city_discount": {
+        "20_ft": null,
+        "25_ft": null,
+        "30_ft": null,
+        "35_ft": null,
+        "40_ft": null
+      },
+      "local_business_profile": {
+        "name": "Oil Field Base Camp Rentals USA",
+        "street_address": "1016 W Rusk St Unit 5",
+        "address_locality": "Jacksonville",
+        "address_region": "TX",
+        "postal_code": "75766",
+        "address_country": "US",
+        "phone_display": "1-888-385-5965",
+        "phone_e164": "+18883855965",
+        "hours_display": "Open 24 hours, Monday–Sunday",
+        "profile_url": "https://maps.google.com/?cid=7538738209247297369",
+        "review_url": "https://g.page/r/CVl_2Zh1-p5oEAE/review",
+        "map_embed_url": "https://www.google.com/maps?cid=7538738209247297369&output=embed"
+      },
+      "faqs": [
+        {
+          "question": "What information is needed for a Jacksonville workforce housing request?",
+          "answer": "Provide the Jacksonville project location, crew count, rental dates, shift or room-sharing requirements, site access, available utilities, and the housing or support facilities you want reviewed."
+        },
+        {
+          "question": "Which basecamp facilities can be requested for a Jacksonville project?",
+          "answer": "A request can include workforce housing or sleeper units plus kitchens, refrigeration, dishwashing, restrooms, showers, and laundry. The approved quote identifies the available equipment and services included for the project."
+        },
+        {
+          "question": "Is the Jacksonville business line available 24 hours?",
+          "answer": "Yes. The verified Google Business Profile lists the Jacksonville business as open 24 hours every day. Equipment availability, delivery, setup, and occupancy timing are still confirmed for each project."
+        },
+        {
+          "question": "How is delivery timing for Jacksonville determined?",
+          "answer": "Delivery timing depends on the approved dispatch origin, route, site access, requested configuration, equipment availability, and site preparation. The project quote confirms the schedule; this page does not publish an unverified ETA."
+        },
+        {
+          "question": "Can Jacksonville projects request short-term or long-term rentals?",
+          "answer": "Both short-term and long-term project requirements can be submitted for review. The available configuration, rental term, delivery scope, and pricing are confirmed in the project-specific quote."
+        }
+      ],
+      "page_layout_data": {
+        "slug": "jacksonville-texas",
+        "title": "Jacksonville, Texas Remote Workforce Housing Basecamp Trailer Rentals",
+        "h1": "Jacksonville, Texas Remote Workforce Housing Basecamp Trailer Rentals",
+        "description": "Plan remote workforce housing basecamp trailer rentals in Jacksonville, Texas around the crew count, rental dates, sleeping requirements, access, utilities, and requested support facilities. Oil Field Base Camp Facilities and Management coordinates the approved housing, transport, setup, and basecamp support scope for each project. Request a project-specific review for workforce housing or sleeper units and any required kitchen, refrigeration, dishwashing, restroom, shower, or laundry facilities. Availability, delivery timing, equipment configuration, and pricing are confirmed in the approved quote.",
+        "breadcrumb_labels": [
+          "Home",
+          "Service Area Pages",
+          "Texas",
+          "Jacksonville"
+        ],
+        "availability_label": "Request Jacksonville workforce housing availability",
+        "starting_price": null,
+        "starting_price_basis": "Project-specific workforce housing and basecamp quote; no published starting rate or automatic Jacksonville discount.",
+        "delivery_travel_time": "Confirmed with project quote",
+        "delivery_time_range": {
+          "min_hours": null,
+          "max_hours": null,
+          "display": "Confirmed with project quote"
+        },
+        "estimated_delivery_display": "Confirmed with the approved Jacksonville project quote after the dispatch origin, route, equipment availability, site access, preparation, and setup requirements are reviewed.",
+        "delivery_distance": {
+          "min_miles": null,
+          "max_miles": null,
+          "display": "Confirmed with project quote",
+          "basis": "No unverified route distance is published for this page."
+        },
+        "service_hours": "Open 24 hours, Monday–Sunday",
+        "inventory_family": "Workforce housing and sleeper trailers; kitchen, refrigeration, dishwashing, restroom, shower, laundry, access, and utility-support requirements subject to configuration and availability review",
+        "related_incident_articles": [],
+        "incident_research_status": "No workforce-housing-specific incident source has been verified for this page. Omit the incident section until a relevant source is reviewed; do not imply that a reported organization or project rented from this company.",
+        "nearby_service_areas": [
+          "Tyler, Texas"
+        ],
+        "nearby_service_areas_status": "Jacksonville and Tyler are East Texas planning areas; confirm the actual route and deployment scope before booking.",
+        "rental_information": {
+          "minimum_rental": "Request a project-specific quote. The minimum rental term and charge depend on the approved accommodation configuration, crew requirements, project duration, site, transport, setup, and requested support facilities.",
+          "delivery_fee": "Delivery is quoted for the approved housing and support equipment, dispatch origin, Jacksonville destination, route, site access, setup scope, and return arrangements.",
+          "setup": "The quote identifies approved trailer placement, connections, setup, handover checks, and the responsibilities of the company and site operator before occupancy.",
+          "extensions": "Request extensions before the scheduled return date; availability, continued site suitability, company approval, and revised pricing must be confirmed.",
+          "long_term_rental": "Short-term and long-term workforce housing requests are reviewed against project duration, accommodation configuration, fleet availability, and the agreed service scope."
         }
       }
     },
