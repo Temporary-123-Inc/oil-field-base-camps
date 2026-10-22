@@ -920,5 +920,6 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Placeholder scan for the five prohibited bracketed policy tokens across `src`, `public`, `dist`, `index.html` and `scripts`: zero matches. `git diff --check`: passed (line-ending notices only).
 - Local desktop browser QA at `http://127.0.0.1:4174/texas/jacksonville-texas/`: exact H1 and `Home → Texas → Jacksonville` visible; hero media and facts rendered; all five FAQ controls appeared; address, 24/7 hours, phone, Google Maps link, review link and embedded map container appeared; no visible above-the-fold overflow observed.
 - Broad `pnpm test`: not green. Results were 27 files passed and 281 tests passed, with 51 unrelated suites unable to import absent legacy dependencies (`cheerio`, Firebase test packages, Playwright) and four unrelated old assertions failing. This is recorded as an unverified repository-wide boundary, not as a Jacksonville regression.
-- Release: pending commit, push and production deployment verification.
+- Release: implementation commit `b7d3147` pushed to organization `main`; production deployment `dpl_2whZzC5HuhksgPwKXtLjq8R5H5e3` reached READY.
+- Live `https://oil-field-base-camps.vercel.app/texas/jacksonville-texas/` browser QA confirmed the exact title, H1, breadcrumb, quote-based facts, hero imagery, five FAQ controls, verified hours, address, phone, profile link, review link and embedded map container.
 
