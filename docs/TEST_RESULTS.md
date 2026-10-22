@@ -953,5 +953,9 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Generated Jacksonville HTML contains the exact emergency H1 and 153-character meta description, with zero `AggregateRating` occurrences.
 - Generated 404 output contains `noindex,nofollow`, has no canonical, and the blanket Vercel `/(.*) → /index.html` rewrite is absent.
 - Built JavaScript contains the exact `Oil Field Base Camps shield logo` alt; all three Jacksonville gallery images already retained descriptive alt text.
-- `git diff --check`: passed with line-ending notices only. Production status-code and rendered-page verification remain pending.
+- `git diff --check`: passed with line-ending notices only.
+- Release: commit `fd301e1` pushed to organization `main`; production deployment `dpl_9bpQ8mULyzy7BEhJ19qJthDyMN7i` reached READY.
+- Live Jacksonville raw HTML: HTTP 200, exact emergency H1, exact 153-character meta description and zero `AggregateRating` occurrences.
+- Live rendered accessibility tree: exact H1 present; header shield exposes `Oil Field Base Camps shield logo`; all three location photos retain descriptive names.
+- Live unknown-route check: HTTP 404, `noindex,nofollow` present, and zero canonical links.
 

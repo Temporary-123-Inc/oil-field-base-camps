@@ -8,9 +8,9 @@ Root task owns the destination-wide rebrand and rebuild on `codex/rebuild-oil-fi
 
 Current task added one contextual homepage link to `/texas/jacksonville-texas/` in the primary workforce-housing copy and the matching prerendered homepage HTML. Focused tests, type-check, the 314-route production build, raw-link checks and `git diff --check` passed. Commit `5ee3ac0` is live through READY deployment `dpl_6HMKQ6Dx2HwQGY9biWkoxvaa5Hy6`; live source and destination checks passed. The homepage layout, Jacksonville route, location facts, metadata, forms, and unrelated work were preserved.
 
-## 2026-10-23 Jacksonville SEO and 404 correction — Complete locally; release pending
+## 2026-10-23 Jacksonville SEO and 404 correction — Complete; live verified
 
-Current task updated the Jacksonville H1 and meta description, removed AggregateRating from schema, corrected the one empty rendered image alt, and replaced the blanket Vercel rewrite with a generated 404 page and filesystem routing. Focused tests passed 10/10, type-check and the 314-route build passed, and generated-output checks passed. The visible profile rating, valid URLs, canonicals, forms, and unrelated work remain preserved; production HTTP verification is pending.
+Current task updated the Jacksonville H1 and meta description, removed AggregateRating from schema, corrected the one empty rendered image alt, and replaced the blanket Vercel rewrite with a generated 404 page and filesystem routing. Focused tests passed 10/10, type-check and the 314-route build passed, and generated-output checks passed. Commit `fd301e1` is live through READY deployment `dpl_9bpQ8mULyzy7BEhJ19qJthDyMN7i`; live page, schema, alt-text and HTTP 404 checks passed. The visible profile rating, valid URLs, canonicals, forms, and unrelated work remain preserved.
 
 ## 2026-09-26 direct-answer guide release — Active
 
