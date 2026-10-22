@@ -1,5 +1,11 @@
 # Temporary123 Project Status
 
+## 2026-10-23 — Homepage Jacksonville internal link (release pending)
+
+- Added a descriptive homepage link from the primary workforce-housing section to `/texas/jacksonville-texas/` so visitors and crawlers can discover the Jacksonville city page in a relevant content context.
+- Mirrored the same link and anchor wording in the prerendered homepage HTML; no location facts, route metadata, forms, or layout structure changed.
+- Focused tests passed 8/8, TypeScript passed, the production build generated 314 indexable routes, raw homepage output contains the exact internal link, and `git diff --check` passed.
+
 ## 2026-10-13 — Homepage primary family SEO and photo marquee (live verified)
 
 - Added a new homepage section immediately before `From Brief to Basecamp` for Remote Basecamp, Man Camp & Workforce Housing. Three readable paragraphs include all nine facility families and the requested rental/leasing, temporary/modular/mobile/portable, emergency/onsite, construction/renovation/industrial-cleanup, and short-/long-term intent language.

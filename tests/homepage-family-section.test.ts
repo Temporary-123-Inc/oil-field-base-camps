@@ -5,11 +5,18 @@ import { describe, expect, it } from 'vitest'
 const root = process.cwd()
 const main = fs.readFileSync(path.join(root, 'src', 'main.tsx'), 'utf8')
 const styles = fs.readFileSync(path.join(root, 'src', 'styles.css'), 'utf8')
+const prerender = fs.readFileSync(path.join(root, 'scripts', 'prerender.mjs'), 'utf8')
 
 describe('homepage primary family section', () => {
   it('renders immediately before the brief-to-basecamp process', () => {
     expect(main).toContain('<HomeFamilySection/><Process/>')
     expect(main).toContain('Remote Basecamp, Man Camp &amp; Workforce Housing')
+  })
+
+  it('links the homepage contextually to the Jacksonville, Texas city page', () => {
+    expect(main).toContain('href="/texas/jacksonville-texas/"')
+    expect(main).toContain('Jacksonville, Texas remote workforce housing basecamp trailer rentals')
+    expect(prerender).toContain('href="/texas/jacksonville-texas/"')
   })
 
   it('mentions all nine facility families in readable copy', () => {

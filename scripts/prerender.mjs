@@ -35,8 +35,10 @@ const etaLabel = city => {
   return (typeof range === 'object' ? range?.display : range) || city.delivery_time_range?.display || city.page_layout_data.estimated_delivery_display || 'Confirmed with quote'
 }
 
+const homepageBody = '<div class="static-location-shell"><main><h1>Remote Workforce Housing Basecamp Rentals</h1><p>Planning an East Texas project? Explore our <a href="/texas/jacksonville-texas/">Jacksonville, Texas remote workforce housing basecamp trailer rentals</a>.</p></main></div>'
+
 const routes = [
-  ['/', 'Remote Workforce Housing Basecamp Trailer Rentals', 'Plan mancamps, remote workforce housing, bunkbed accommodations and nine coordinated basecamp facility families.', ''],
+  ['/', 'Remote Workforce Housing Basecamp Trailer Rentals', 'Plan mancamps, remote workforce housing, bunkbed accommodations and nine coordinated basecamp facility families.', homepageBody],
   ...inventory.map(([slug, title]) => [`/inventory/${slug}/`, title, `${title} for remote workforce housing, industrial projects and temporary basecamp operations.`, '']),
   ['/industries/', 'Remote Workforce Housing for Demanding Operations', 'Temporary basecamp support for oil and gas, mining, construction, government and emergency projects.', ''],
   ['/how-it-works/', 'Plan a Remote Man Camp Basecamp Rental', 'Prepare crew, site, utility and schedule requirements for a remote basecamp deployment.', ''],

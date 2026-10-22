@@ -497,3 +497,9 @@ The requested primary-family and subkeyword terms are included in three complete
 - Keep one LocalBusiness entity and the established `@id`; do not add a competing entity or duplicate schema on Jacksonville.
 - Do not invent review text, reviewer identities, price range, coordinates or guarantees. Rating values are point-in-time profile facts and should be updated again if the profile changes.
 
+## 2026-10-23 — Link Jacksonville from relevant homepage content
+
+- Link the Jacksonville city page from the homepage primary workforce-housing section, where the destination supports the surrounding topic and user intent.
+- Use descriptive anchor text naming Jacksonville, Texas and remote workforce housing basecamp trailer rentals; avoid generic link text.
+- Mirror the link in prerendered homepage HTML so internal discovery does not depend on client-side JavaScript.
+

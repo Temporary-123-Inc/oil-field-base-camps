@@ -934,3 +934,12 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Release: commit `48dbd67` pushed to organization `main`; production deployment `dpl_13ZqsUvZcNjo6tePiGfrJaZjKMCw` reached READY.
 - Live raw HTML check passed on `/texas/jacksonville-texas/`: title/H1 present, category present, visible 5.0/4-review summary present, exact AggregateRating present, and LocalBusiness count exactly one. Live rendered accessibility output also exposed the rating, category, address, hours, phone, website and both Google actions.
 
+## 2026-10-23 — Homepage Jacksonville internal link
+
+- Focused Vitest (`homepage-family-section`, `indexing-controls`): 2 files and 8 tests passed.
+- `pnpm run typecheck`: passed.
+- `pnpm run build`: passed; Vite built successfully and prerendered 314 indexable routes (50 states, 247 cities).
+- Generated `dist/index.html` contains one descriptive anchor to `/texas/jacksonville-texas/` with the text `Jacksonville, Texas remote workforce housing basecamp trailer rentals`.
+- `git diff --check`: passed with line-ending notices only.
+- Release and live verification remain pending.
+
