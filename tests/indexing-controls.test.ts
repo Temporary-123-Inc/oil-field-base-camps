@@ -7,6 +7,7 @@ const origin = 'https://oil-field-base-camps.com'
 const robots = fs.readFileSync(path.join(root, 'public', 'robots.txt'), 'utf8').replaceAll('\r\n', '\n')
 const head = fs.readFileSync(path.join(root, 'index.html'), 'utf8')
 const prerender = fs.readFileSync(path.join(root, 'scripts', 'prerender.mjs'), 'utf8')
+const vercel = fs.readFileSync(path.join(root, 'vercel.json'), 'utf8')
 const data = JSON.parse(fs.readFileSync(path.join(root, 'public', 'data', 'site-38-remote-workforce-housing-basecamp.json'), 'utf8'))
 
 describe('public indexing controls', () => {
@@ -29,5 +30,8 @@ describe('public indexing controls', () => {
     expect(prerender).toContain('Disallow: /api/')
     expect(prerender).toContain('Indexing controls failed:')
     expect(prerender).toContain("['/texas/jacksonville-texas/', '2026-10-23']")
+    expect(prerender).toContain("fs.writeFileSync(path.join(dist, '404.html'), notFoundHtml)")
+    expect(prerender).toContain('noindex,nofollow')
+    expect(vercel).not.toContain('{ "source": "/(.*)", "destination": "/index.html" }')
   })
 })

@@ -43,6 +43,7 @@ type CityRecord = {
     slug: string
     title: string
     h1: string
+    meta_description?: string
     description: string
     breadcrumb_labels: string[]
     availability_label: string

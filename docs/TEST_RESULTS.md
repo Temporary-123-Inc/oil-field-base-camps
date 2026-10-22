@@ -945,3 +945,13 @@ The first Vercel build reported `conflicting_file_path` because the inherited `a
 - Live homepage check: HTTP 200, exactly one `/texas/jacksonville-texas/` anchor, and the exact descriptive anchor text present in raw HTML.
 - Live destination check: HTTP 200 with the intended canonical `https://oil-field-base-camps.com/texas/jacksonville-texas/`.
 
+## 2026-10-23 — Jacksonville SEO and real 404 correction
+
+- Focused Vitest (`location-data`, `local-business-schema`, `indexing-controls`): 3 files and 10 tests passed.
+- `pnpm run typecheck`: passed.
+- `pnpm run build`: passed; Vite built and prerendered 314 indexable routes (50 states, 247 cities), plus `dist/404.html`.
+- Generated Jacksonville HTML contains the exact emergency H1 and 153-character meta description, with zero `AggregateRating` occurrences.
+- Generated 404 output contains `noindex,nofollow`, has no canonical, and the blanket Vercel `/(.*) → /index.html` rewrite is absent.
+- Built JavaScript contains the exact `Oil Field Base Camps shield logo` alt; all three Jacksonville gallery images already retained descriptive alt text.
+- `git diff --check`: passed with line-ending notices only. Production status-code and rendered-page verification remain pending.
+

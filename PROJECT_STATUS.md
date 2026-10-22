@@ -1,5 +1,13 @@
 # Temporary123 Project Status
 
+## 2026-10-23 — Jacksonville SEO and real 404 correction (release pending)
+
+- Removed self-serving `AggregateRating` markup from the sitewide LocalBusiness JSON-LD while retaining the owner-visible Jacksonville profile rating block.
+- Changed the Jacksonville H1 to `Emergency Remote Workforce Housing Basecamp Trailer Rentals in Jacksonville, TX` and added a dedicated 153-character meta description.
+- Replaced the remaining empty header-logo alt on the rendered Jacksonville page with `Oil Field Base Camps shield logo`.
+- Removed the blanket Vercel catch-all rewrite and generated a canonical-free, `noindex,nofollow` `404.html` so unknown direct URLs can return a genuine 404 instead of the homepage shell.
+- Focused tests passed 10/10, TypeScript passed, the production build generated 314 indexable routes plus the 404, generated-output checks passed, and `git diff --check` passed.
+
 ## 2026-10-23 — Homepage Jacksonville internal link (live verified)
 
 - Added a descriptive homepage link from the primary workforce-housing section to `/texas/jacksonville-texas/` so visitors and crawlers can discover the Jacksonville city page in a relevant content context.

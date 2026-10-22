@@ -503,3 +503,9 @@ The requested primary-family and subkeyword terms are included in three complete
 - Use descriptive anchor text naming Jacksonville, Texas and remote workforce housing basecamp trailer rentals; avoid generic link text.
 - Mirror the link in prerendered homepage HTML so internal discovery does not depend on client-side JavaScript.
 
+## 2026-10-23 — Keep visible profile ratings separate from review rich-result markup
+
+- Remove `AggregateRating` from the site's own LocalBusiness entity to avoid unsupported self-serving review snippet eligibility.
+- Retain the verified visible Google profile rating and review count as ordinary business information; visible copy is not review structured data.
+- Unknown direct URLs must bypass the SPA shell, return HTTP 404, and use a canonical-free `noindex,nofollow` error document. Registered prerendered routes continue to resolve through their generated files.
+
